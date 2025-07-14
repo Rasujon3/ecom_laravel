@@ -20,6 +20,16 @@ class LoadNavbarCategories
             }
         }
 
+        if (!Session::has('about_us')) {
+            $response = Http::asForm()->post('https://prodhanltd.com/api/institute.php');
+
+            if ($response->successful()) {
+                Session::put('about_us', $response->json());
+            } else {
+                Session::put('about_us', []); // fallback empty
+            }
+        }
+
         return $next($request);
     }
 }

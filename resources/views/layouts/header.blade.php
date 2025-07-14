@@ -3,7 +3,7 @@
         <div class="container">
             <div class="header-left">
                 <p class="welcome-msg">
-                    Welcome to RIT ecommerce
+                    Welcome to {{ session('about_us.institute_name') ?? 'RIT Ecommerce' }}
                 </p>
             </div>
             <div class="header-right">
@@ -38,7 +38,7 @@
                 </a>
                 <a href="{{ route('home') }}" class="logo ml-lg-0">
                     <img
-                        src="{{ asset('assets/images/demos/demo3/header-logo.png') }}"
+                        src="{{ session('about_us.institute_phone') ? 'https://prodhanltd.com/'.session('about_us.head_image') : asset('assets/images/demos/demo3/header-logo.png') }}"
                         alt="logo"
                         width="144"
                         height="45"
@@ -90,8 +90,8 @@
                             >
                             :
                         </h4>
-                        <a href="tel:#" class="phone-number font-weight-bolder ls-50"
-                        >01500000000</a
+                        <a href="tel:{{ session('about_us.institute_phone') ?? '+1 800 57 07777' }}" class="phone-number font-weight-bolder ls-50"
+                        >{{ session('about_us.institute_phone') ?? '+1 800 57 07777' }}</a
                         >
                     </div>
                 </div>

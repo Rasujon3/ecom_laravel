@@ -6,7 +6,7 @@
                     <div class="widget widget-about">
                         <a href="#" class="logo-footer">
                             <img
-                                src="{{ asset('assets/images/demos/demo3/footer-logo.png') }}"
+                                src="{{ session('about_us.institute_logo') ? 'https://prodhanltd.com/'.session('about_us.institute_logo') : asset('assets/images/demos/demo3/footer-logo.png') }}"
                                 alt="logo-footer"
                                 width="145"
                                 height="45"
@@ -15,7 +15,7 @@
                         <div class="widget-body">
                             <p class="widget-about-title">Got Question? Call us 24/7</p>
                             <a href="tel:18005707777" class="widget-about-call"
-                            >+88 01500000000</a
+                            >{{ session('about_us.institute_phone') ?? '+1 800 57 07777' }}</a
                             >
                             <p class="widget-about-desc">
                                 Register now to get updates on pronot get up icons &
@@ -92,7 +92,7 @@
         <div class="footer-bottom">
             <div class="footer-left">
                 <p class="copyright">
-                    Copyright © 2025 RIT eCommerce. All Rights Reserved.
+                    Copyright © 2025 {{ session('about_us.institute_name') ?? 'RIT Ecommerce' }}. All Rights Reserved.
                 </p>
             </div>
             <div class="footer-right">

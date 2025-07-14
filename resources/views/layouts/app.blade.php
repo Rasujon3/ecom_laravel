@@ -91,7 +91,7 @@
 
   <body class="home">
     <div class="page-wrapper">
-      <h1 class="d-none">RIT ecommerce</h1>
+      <h1 class="d-none">{{ session('about_us.institute_name') ?? 'RIT Ecommerce' }}</h1>
       <!-- Start of Header -->
       @include('layouts.header')
       <!-- End of Header -->
