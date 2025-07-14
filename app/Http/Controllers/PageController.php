@@ -9,16 +9,15 @@ class PageController extends Controller
 {
     public function index()
     {
-        $response = Http::get('https://prodhanltd.com/api/slide.php');
+        // Slider data
+        $sliderResponse = Http::get('https://prodhanltd.com/api/slide.php');
+        $slides = ($sliderResponse->successful() && $sliderResponse['error'] == 0) ? $sliderResponse['report'] : [];
 
-        // Check if API call is successful and contains data
-        if ($response->successful() && $response['error'] == 0) {
-            $slides = $response['report'];
-        } else {
-            $slides = []; // fallback to empty array
-        }
+        // Categories data (POST method)
+        $categoryResponse = Http::asForm()->post('https://prodhanltd.com/api/home_page_category.php');
+        $categories = ($categoryResponse->successful() && $categoryResponse['error'] == 0) ? $categoryResponse['report'] : [];
 
-        return view('index', compact('slides'));
+        return view('index', compact('slides', 'categories'));
     }
 
     public function wishlist()
