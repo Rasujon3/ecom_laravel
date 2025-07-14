@@ -17,24 +17,26 @@ use App\Http\Controllers\PageController;
 
 Route::get('/wishlist', [PageController::class, 'wishlist']);
 
-Route::get('/shop-banner-sidebar', [PageController::class, 'shopBannerSidebar']);
+Route::get('/shop-fullwidth-banner', [PageController::class, 'shopFullwidthBanner'])->name('shopFullwidthBanner');
+
+Route::get('/shop-banner-sidebar', [PageController::class, 'shopBannerSidebar'])->name('shop-banner-sidebar');
 
 Route::get('/product-details', [PageController::class, 'productDetails']);
 
 Route::get('/order', [PageController::class, 'order']);
 
-Route::get('/my-account', [PageController::class, 'myAccount']);
+Route::get('/my-account', [PageController::class, 'myAccount'])->name('my-account');
 
 Route::get('/login', [PageController::class, 'login']);
 
-Route::get('/faq', [PageController::class, 'faq']);
+Route::get('/faq', [PageController::class, 'faq'])->name('faq');
 
-Route::get('/contact-us', [PageController::class, 'contactUs']);
+Route::get('/contact-us', [PageController::class, 'contactUs'])->name('contact-us');
 
 Route::get('/checkout', [PageController::class, 'checkout']);
 
 Route::get('/cart', [PageController::class, 'cart']);
 
-Route::get('/about-us', [PageController::class, 'aboutUs']);
+Route::get('/about-us', [PageController::class, 'aboutUs'])->name('about-us');
 
-Route::get('/', [PageController::class, 'index']);
+Route::get('/', [PageController::class, 'index'])->name('home');

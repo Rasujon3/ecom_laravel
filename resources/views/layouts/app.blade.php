@@ -106,8 +106,8 @@
 
               <!-- End of Dropdown Menu -->
 
-              <a href="contact-us.php" class="d-lg-show">Contact Us</a>
-              <a href="my-account.php" class="d-lg-show">My Account</a>
+              <a href="{{ route('contact-us') }}" class="d-lg-show">Contact Us</a>
+              <a href="{{ route('my-account') }}" class="d-lg-show">My Account</a>
               <a href="assets/ajax/login.html" class="d-lg-show login sign-in"
                 ><i class="w-icon-account"></i>Sign In</a
               >
@@ -131,7 +131,7 @@
                 aria-label="menu-toggle"
               >
               </a>
-              <a href="index.php" class="logo ml-lg-0">
+              <a href="{{ route('home') }}" class="logo ml-lg-0">
                 <img
                   src="{{ asset('assets/images/demos/demo3/header-logo.png') }}"
                   alt="logo"
@@ -323,7 +323,7 @@
                   <div class="dropdown-box">
                     <ul class="menu vertical-menu category-menu">
                       <li>
-                        <a href="shop-fullwidth-banner.html">
+                        <a href="{{ route('shopFullwidthBanner') }}">
                           <i class="w-icon-tshirt2"></i>Fashion
                         </a>
                         <ul class="megamenu">
@@ -332,38 +332,38 @@
                             <hr class="divider" />
                             <ul>
                               <li>
-                                <a href="shop-fullwidth-banner.html"
+                                <a href="{{ route('shopFullwidthBanner') }}"
                                   >New Arrivals</a
                                 >
                               </li>
                               <li>
-                                <a href="shop-fullwidth-banner.html"
+                                <a href="{{ route('shopFullwidthBanner') }}"
                                   >Best Sellers</a
                                 >
                               </li>
                               <li>
-                                <a href="shop-fullwidth-banner.html"
+                                <a href="{{ route('shopFullwidthBanner') }}"
                                   >Trending</a
                                 >
                               </li>
                               <li>
-                                <a href="shop-fullwidth-banner.html"
+                                <a href="{{ route('shopFullwidthBanner') }}"
                                   >Clothing</a
                                 >
                               </li>
                               <li>
-                                <a href="shop-fullwidth-banner.html">Shoes</a>
+                                <a href="{{ route('shopFullwidthBanner') }}">Shoes</a>
                               </li>
                               <li>
-                                <a href="shop-fullwidth-banner.html">Bags</a>
+                                <a href="{{ route('shopFullwidthBanner') }}">Bags</a>
                               </li>
                               <li>
-                                <a href="shop-fullwidth-banner.html"
+                                <a href="{{ route('shopFullwidthBanner') }}"
                                   >Accessories</a
                                 >
                               </li>
                               <li>
-                                <a href="shop-fullwidth-banner.html"
+                                <a href="{{ route('shopFullwidthBanner') }}"
                                   >Jewlery & Watches</a
                                 >
                               </li>
@@ -374,38 +374,38 @@
                             <hr class="divider" />
                             <ul>
                               <li>
-                                <a href="shop-fullwidth-banner.html"
+                                <a href="{{ route('shopFullwidthBanner') }}"
                                   >New Arrivals</a
                                 >
                               </li>
                               <li>
-                                <a href="shop-fullwidth-banner.html"
+                                <a href="{{ route('shopFullwidthBanner') }}"
                                   >Best Sellers</a
                                 >
                               </li>
                               <li>
-                                <a href="shop-fullwidth-banner.html"
+                                <a href="{{ route('shopFullwidthBanner') }}"
                                   >Trending</a
                                 >
                               </li>
                               <li>
-                                <a href="shop-fullwidth-banner.html"
+                                <a href="{{ route('shopFullwidthBanner') }}"
                                   >Clothing</a
                                 >
                               </li>
                               <li>
-                                <a href="shop-fullwidth-banner.html">Shoes</a>
+                                <a href="{{ route('shopFullwidthBanner') }}">Shoes</a>
                               </li>
                               <li>
-                                <a href="shop-fullwidth-banner.html">Bags</a>
+                                <a href="{{ route('shopFullwidthBanner') }}">Bags</a>
                               </li>
                               <li>
-                                <a href="shop-fullwidth-banner.html"
+                                <a href="{{ route('shopFullwidthBanner') }}"
                                   >Accessories</a
                                 >
                               </li>
                               <li>
-                                <a href="shop-fullwidth-banner.html"
+                                <a href="{{ route('shopFullwidthBanner') }}"
                                   >Jewlery & Watches</a
                                 >
                               </li>
@@ -445,55 +445,55 @@
                         </ul>
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html">
+                        <a href="{{ route('shopFullwidthBanner') }}">
                           <i class="w-icon-home"></i>Home & Garden
                         </a>
-                        
+
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html">
+                        <a href="{{ route('shopFullwidthBanner') }}">
                           <i class="w-icon-electronics"></i>Electronics
                         </a>
-                      
+
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html">
+                        <a href="{{ route('shopFullwidthBanner') }}">
                           <i class="w-icon-furniture"></i>Furniture
                         </a>
-                        
+
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html">
+                        <a href="{{ route('shopFullwidthBanner') }}">
                           <i class="w-icon-heartbeat"></i>Healthy & Beauty
                         </a>
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html">
+                        <a href="{{ route('shopFullwidthBanner') }}">
                           <i class="w-icon-gift"></i>Gift Ideas
                         </a>
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html">
+                        <a href="{{ route('shopFullwidthBanner') }}">
                           <i class="w-icon-gamepad"></i>Toy & Games
                         </a>
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html">
+                        <a href="{{ route('shopFullwidthBanner') }}">
                           <i class="w-icon-ice-cream"></i>Cooking
                         </a>
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html">
+                        <a href="{{ route('shopFullwidthBanner') }}">
                           <i class="w-icon-ios"></i>Smart Phones
                         </a>
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html">
+                        <a href="{{ route('shopFullwidthBanner') }}">
                           <i class="w-icon-camera"></i>Cameras & Photo
                         </a>
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html">
+                        <a href="{{ route('shopFullwidthBanner') }}">
                           <i class="w-icon-ruby"></i>Accessories
                         </a>
                       </li>
@@ -511,23 +511,23 @@
                 <nav class="main-nav">
                   <ul class=" menu active-underline">
                     <li class="active ">
-                      <a href="index.php">Home</a>
+                      <a href="{{ route('home') }}">Home</a>
                     </li>
                     <li>
-                      <a href="shop-banner-sidebar.php">Shop</a>
+                      <a href="{{ route('shop-banner-sidebar') }}">Shop</a>
                     </li>
                     <li>
-                      <a href="about-us.php">About Us</a>
+                      <a href="{{ route('about-us') }}">About Us</a>
                     </li>
                     <li>
-                      <a href="contact-us.php">Contact Us</a>
+                      <a href="{{ route('contact-us') }}">Contact Us</a>
                     </li>
                     <li>
-                      <a href="faq.php">FAQ's</a>
+                      <a href="{{ route('faq') }}">FAQ's</a>
                     </li>
 
                     <li>
-                      <a href="my-account.php">My Account</a>
+                      <a href="{{ route('my-account') }}">My Account</a>
                     </li>
                   </ul>
                 </nav>
@@ -843,7 +843,7 @@
                       </li>
                       <li><a href="shop-boxed-banner.html">Boxed Banner</a></li>
                       <li>
-                        <a href="shop-fullwidth-banner.html"
+                        <a href="{{ route('shopFullwidthBanner') }}"
                           >Full Width Banner</a
                         >
                       </li>
@@ -1091,7 +1091,7 @@
           <div class="tab-pane" id="categories">
             <ul class="mobile-menu">
               <li>
-                <a href="shop-fullwidth-banner.html">
+                <a href="{{ route('shopFullwidthBanner') }}">
                   <i class="w-icon-tshirt2"></i>Fashion
                 </a>
                 <ul>
@@ -1099,44 +1099,44 @@
                     <a href="#">Women</a>
                     <ul>
                       <li>
-                        <a href="shop-fullwidth-banner.html">New Arrivals</a>
+                        <a href="{{ route('shopFullwidthBanner') }}">New Arrivals</a>
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html">Best Sellers</a>
+                        <a href="{{ route('shopFullwidthBanner') }}">Best Sellers</a>
                       </li>
-                      <li><a href="shop-fullwidth-banner.html">Trending</a></li>
-                      <li><a href="shop-fullwidth-banner.html">Clothing</a></li>
-                      <li><a href="shop-fullwidth-banner.html">Shoes</a></li>
-                      <li><a href="shop-fullwidth-banner.html">Bags</a></li>
+                      <li><a href="{{ route('shopFullwidthBanner') }}">Trending</a></li>
+                      <li><a href="{{ route('shopFullwidthBanner') }}">Clothing</a></li>
+                      <li><a href="{{ route('shopFullwidthBanner') }}">Shoes</a></li>
+                      <li><a href="{{ route('shopFullwidthBanner') }}">Bags</a></li>
                       <li>
-                        <a href="shop-fullwidth-banner.html">Accessories</a>
+                        <a href="{{ route('shopFullwidthBanner') }}">Accessories</a>
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html"
+                        <a href="{{ route('shopFullwidthBanner') }}"
                           >Jewlery & Watches</a
                         >
                       </li>
-                      <li><a href="shop-fullwidth-banner.html">Sale</a></li>
+                      <li><a href="{{ route('shopFullwidthBanner') }}">Sale</a></li>
                     </ul>
                   </li>
                   <li>
                     <a href="#">Men</a>
                     <ul>
                       <li>
-                        <a href="shop-fullwidth-banner.html">New Arrivals</a>
+                        <a href="{{ route('shopFullwidthBanner') }}">New Arrivals</a>
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html">Best Sellers</a>
+                        <a href="{{ route('shopFullwidthBanner') }}">Best Sellers</a>
                       </li>
-                      <li><a href="shop-fullwidth-banner.html">Trending</a></li>
-                      <li><a href="shop-fullwidth-banner.html">Clothing</a></li>
-                      <li><a href="shop-fullwidth-banner.html">Shoes</a></li>
-                      <li><a href="shop-fullwidth-banner.html">Bags</a></li>
+                      <li><a href="{{ route('shopFullwidthBanner') }}">Trending</a></li>
+                      <li><a href="{{ route('shopFullwidthBanner') }}">Clothing</a></li>
+                      <li><a href="{{ route('shopFullwidthBanner') }}">Shoes</a></li>
+                      <li><a href="{{ route('shopFullwidthBanner') }}">Bags</a></li>
                       <li>
-                        <a href="shop-fullwidth-banner.html">Accessories</a>
+                        <a href="{{ route('shopFullwidthBanner') }}">Accessories</a>
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html"
+                        <a href="{{ route('shopFullwidthBanner') }}"
                           >Jewlery & Watches</a
                         >
                       </li>
@@ -1145,7 +1145,7 @@
                 </ul>
               </li>
               <li>
-                <a href="shop-fullwidth-banner.html">
+                <a href="{{ route('shopFullwidthBanner') }}">
                   <i class="w-icon-home"></i>Home & Garden
                 </a>
                 <ul>
@@ -1153,37 +1153,37 @@
                     <a href="#">Bedroom</a>
                     <ul>
                       <li>
-                        <a href="shop-fullwidth-banner.html"
+                        <a href="{{ route('shopFullwidthBanner') }}"
                           >Beds, Frames & Bases</a
                         >
                       </li>
-                      <li><a href="shop-fullwidth-banner.html">Dressers</a></li>
+                      <li><a href="{{ route('shopFullwidthBanner') }}">Dressers</a></li>
                       <li>
-                        <a href="shop-fullwidth-banner.html">Nightstands</a>
+                        <a href="{{ route('shopFullwidthBanner') }}">Nightstands</a>
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html"
+                        <a href="{{ route('shopFullwidthBanner') }}"
                           >Kid's Beds & Headboards</a
                         >
                       </li>
-                      <li><a href="shop-fullwidth-banner.html">Armoires</a></li>
+                      <li><a href="{{ route('shopFullwidthBanner') }}">Armoires</a></li>
                     </ul>
                   </li>
                   <li>
                     <a href="#">Living Room</a>
                     <ul>
                       <li>
-                        <a href="shop-fullwidth-banner.html">Coffee Tables</a>
+                        <a href="{{ route('shopFullwidthBanner') }}">Coffee Tables</a>
                       </li>
-                      <li><a href="shop-fullwidth-banner.html">Chairs</a></li>
-                      <li><a href="shop-fullwidth-banner.html">Tables</a></li>
+                      <li><a href="{{ route('shopFullwidthBanner') }}">Chairs</a></li>
+                      <li><a href="{{ route('shopFullwidthBanner') }}">Tables</a></li>
                       <li>
-                        <a href="shop-fullwidth-banner.html"
+                        <a href="{{ route('shopFullwidthBanner') }}"
                           >Futons & Sofa Beds</a
                         >
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html"
+                        <a href="{{ route('shopFullwidthBanner') }}"
                           >Cabinets & Chests</a
                         >
                       </li>
@@ -1193,17 +1193,17 @@
                     <a href="#">Office</a>
                     <ul>
                       <li>
-                        <a href="shop-fullwidth-banner.html">Office Chairs</a>
+                        <a href="{{ route('shopFullwidthBanner') }}">Office Chairs</a>
                       </li>
-                      <li><a href="shop-fullwidth-banner.html">Desks</a></li>
+                      <li><a href="{{ route('shopFullwidthBanner') }}">Desks</a></li>
                       <li>
-                        <a href="shop-fullwidth-banner.html">Bookcases</a>
-                      </li>
-                      <li>
-                        <a href="shop-fullwidth-banner.html">File Cabinets</a>
+                        <a href="{{ route('shopFullwidthBanner') }}">Bookcases</a>
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html"
+                        <a href="{{ route('shopFullwidthBanner') }}">File Cabinets</a>
+                      </li>
+                      <li>
+                        <a href="{{ route('shopFullwidthBanner') }}"
                           >Breakroom Tables</a
                         >
                       </li>
@@ -1213,33 +1213,33 @@
                     <a href="#">Kitchen & Dining</a>
                     <ul>
                       <li>
-                        <a href="shop-fullwidth-banner.html">Dining Sets</a>
+                        <a href="{{ route('shopFullwidthBanner') }}">Dining Sets</a>
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html"
+                        <a href="{{ route('shopFullwidthBanner') }}"
                           >Kitchen Storage Cabinets</a
                         >
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html">Bashers Racks</a>
+                        <a href="{{ route('shopFullwidthBanner') }}">Bashers Racks</a>
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html">Dining Chairs</a>
+                        <a href="{{ route('shopFullwidthBanner') }}">Dining Chairs</a>
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html"
+                        <a href="{{ route('shopFullwidthBanner') }}"
                           >Dining Room Tables</a
                         >
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html">Bar Stools</a>
+                        <a href="{{ route('shopFullwidthBanner') }}">Bar Stools</a>
                       </li>
                     </ul>
                   </li>
                 </ul>
               </li>
               <li>
-                <a href="shop-fullwidth-banner.html">
+                <a href="{{ route('shopFullwidthBanner') }}">
                   <i class="w-icon-electronics"></i>Electronics
                 </a>
                 <ul>
@@ -1247,19 +1247,19 @@
                     <a href="#">Laptops &amp; Computers</a>
                     <ul>
                       <li>
-                        <a href="shop-fullwidth-banner.html"
+                        <a href="{{ route('shopFullwidthBanner') }}"
                           >Desktop Computers</a
                         >
                       </li>
-                      <li><a href="shop-fullwidth-banner.html">Monitors</a></li>
-                      <li><a href="shop-fullwidth-banner.html">Laptops</a></li>
+                      <li><a href="{{ route('shopFullwidthBanner') }}">Monitors</a></li>
+                      <li><a href="{{ route('shopFullwidthBanner') }}">Laptops</a></li>
                       <li>
-                        <a href="shop-fullwidth-banner.html"
+                        <a href="{{ route('shopFullwidthBanner') }}"
                           >Hard Drives &amp; Storage</a
                         >
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html"
+                        <a href="{{ route('shopFullwidthBanner') }}"
                           >Computer Accessories</a
                         >
                       </li>
@@ -1268,17 +1268,17 @@
                   <li>
                     <a href="#">TV &amp; Video</a>
                     <ul>
-                      <li><a href="shop-fullwidth-banner.html">TVs</a></li>
+                      <li><a href="{{ route('shopFullwidthBanner') }}">TVs</a></li>
                       <li>
-                        <a href="shop-fullwidth-banner.html"
+                        <a href="{{ route('shopFullwidthBanner') }}"
                           >Home Audio Speakers</a
                         >
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html">Projectors</a>
+                        <a href="{{ route('shopFullwidthBanner') }}">Projectors</a>
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html"
+                        <a href="{{ route('shopFullwidthBanner') }}"
                           >Media Streaming Devices</a
                         >
                       </li>
@@ -1288,23 +1288,23 @@
                     <a href="#">Digital Cameras</a>
                     <ul>
                       <li>
-                        <a href="shop-fullwidth-banner.html"
+                        <a href="{{ route('shopFullwidthBanner') }}"
                           >Digital SLR Cameras</a
                         >
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html"
+                        <a href="{{ route('shopFullwidthBanner') }}"
                           >Sports & Action Cameras</a
                         >
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html">Camera Lenses</a>
+                        <a href="{{ route('shopFullwidthBanner') }}">Camera Lenses</a>
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html">Photo Printer</a>
+                        <a href="{{ route('shopFullwidthBanner') }}">Photo Printer</a>
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html"
+                        <a href="{{ route('shopFullwidthBanner') }}"
                           >Digital Memory Cards</a
                         >
                       </li>
@@ -1314,18 +1314,18 @@
                     <a href="#">Cell Phones</a>
                     <ul>
                       <li>
-                        <a href="shop-fullwidth-banner.html">Carrier Phones</a>
+                        <a href="{{ route('shopFullwidthBanner') }}">Carrier Phones</a>
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html">Unlocked Phones</a>
+                        <a href="{{ route('shopFullwidthBanner') }}">Unlocked Phones</a>
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html"
+                        <a href="{{ route('shopFullwidthBanner') }}"
                           >Phone & Cellphone Cases</a
                         >
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html"
+                        <a href="{{ route('shopFullwidthBanner') }}"
                           >Cellphone Chargers</a
                         >
                       </li>
@@ -1334,7 +1334,7 @@
                 </ul>
               </li>
               <li>
-                <a href="shop-fullwidth-banner.html">
+                <a href="{{ route('shopFullwidthBanner') }}">
                   <i class="w-icon-furniture"></i>Furniture
                 </a>
                 <ul>
@@ -1342,19 +1342,19 @@
                     <a href="#">Furniture</a>
                     <ul>
                       <li>
-                        <a href="shop-fullwidth-banner.html">Sofas & Couches</a>
+                        <a href="{{ route('shopFullwidthBanner') }}">Sofas & Couches</a>
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html">Armchairs</a>
+                        <a href="{{ route('shopFullwidthBanner') }}">Armchairs</a>
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html">Bed Frames</a>
+                        <a href="{{ route('shopFullwidthBanner') }}">Bed Frames</a>
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html">Beside Tables</a>
+                        <a href="{{ route('shopFullwidthBanner') }}">Beside Tables</a>
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html">Dressing Tables</a>
+                        <a href="{{ route('shopFullwidthBanner') }}">Dressing Tables</a>
                       </li>
                     </ul>
                   </li>
@@ -1362,17 +1362,17 @@
                     <a href="#">Lighting</a>
                     <ul>
                       <li>
-                        <a href="shop-fullwidth-banner.html">Light Bulbs</a>
+                        <a href="{{ route('shopFullwidthBanner') }}">Light Bulbs</a>
                       </li>
-                      <li><a href="shop-fullwidth-banner.html">Lamps</a></li>
+                      <li><a href="{{ route('shopFullwidthBanner') }}">Lamps</a></li>
                       <li>
-                        <a href="shop-fullwidth-banner.html">Celling Lights</a>
-                      </li>
-                      <li>
-                        <a href="shop-fullwidth-banner.html">Wall Lights</a>
+                        <a href="{{ route('shopFullwidthBanner') }}">Celling Lights</a>
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html"
+                        <a href="{{ route('shopFullwidthBanner') }}">Wall Lights</a>
+                      </li>
+                      <li>
+                        <a href="{{ route('shopFullwidthBanner') }}"
                           >Bathroom Lighting</a
                         >
                       </li>
@@ -1382,82 +1382,82 @@
                     <a href="#">Home Accessories</a>
                     <ul>
                       <li>
-                        <a href="shop-fullwidth-banner.html"
+                        <a href="{{ route('shopFullwidthBanner') }}"
                           >Decorative Accessories</a
                         >
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html"
+                        <a href="{{ route('shopFullwidthBanner') }}"
                           >Candals & Holders</a
                         >
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html">Home Fragrance</a>
+                        <a href="{{ route('shopFullwidthBanner') }}">Home Fragrance</a>
                       </li>
-                      <li><a href="shop-fullwidth-banner.html">Mirrors</a></li>
-                      <li><a href="shop-fullwidth-banner.html">Clocks</a></li>
+                      <li><a href="{{ route('shopFullwidthBanner') }}">Mirrors</a></li>
+                      <li><a href="{{ route('shopFullwidthBanner') }}">Clocks</a></li>
                     </ul>
                   </li>
                   <li>
                     <a href="#">Garden & Outdoors</a>
                     <ul>
                       <li>
-                        <a href="shop-fullwidth-banner.html"
+                        <a href="{{ route('shopFullwidthBanner') }}"
                           >Garden Furniture</a
                         >
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html">Lawn Mowers</a>
+                        <a href="{{ route('shopFullwidthBanner') }}">Lawn Mowers</a>
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html"
+                        <a href="{{ route('shopFullwidthBanner') }}"
                           >Pressure Washers</a
                         >
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html"
+                        <a href="{{ route('shopFullwidthBanner') }}"
                           >All Garden Tools</a
                         >
                       </li>
                       <li>
-                        <a href="shop-fullwidth-banner.html">Outdoor Dining</a>
+                        <a href="{{ route('shopFullwidthBanner') }}">Outdoor Dining</a>
                       </li>
                     </ul>
                   </li>
                 </ul>
               </li>
               <li>
-                <a href="shop-fullwidth-banner.html">
+                <a href="{{ route('shopFullwidthBanner') }}">
                   <i class="w-icon-heartbeat"></i>Healthy & Beauty
                 </a>
               </li>
               <li>
-                <a href="shop-fullwidth-banner.html">
+                <a href="{{ route('shopFullwidthBanner') }}">
                   <i class="w-icon-gift"></i>Gift Ideas
                 </a>
               </li>
               <li>
-                <a href="shop-fullwidth-banner.html">
+                <a href="{{ route('shopFullwidthBanner') }}">
                   <i class="w-icon-gamepad"></i>Toy & Games
                 </a>
               </li>
               <li>
-                <a href="shop-fullwidth-banner.html">
+                <a href="{{ route('shopFullwidthBanner') }}">
                   <i class="w-icon-ice-cream"></i>Cooking
                 </a>
               </li>
               <li>
-                <a href="shop-fullwidth-banner.html">
+                <a href="{{ route('shopFullwidthBanner') }}">
                   <i class="w-icon-ios"></i>Smart Phones
                 </a>
               </li>
               <li>
-                <a href="shop-fullwidth-banner.html">
+                <a href="{{ route('shopFullwidthBanner') }}">
                   <i class="w-icon-camera"></i>Cameras & Photo
                 </a>
               </li>
               <li>
-                <a href="shop-fullwidth-banner.html">
+                <a href="{{ route('shopFullwidthBanner') }}">
                   <i class="w-icon-ruby"></i>Accessories
                 </a>
               </li>

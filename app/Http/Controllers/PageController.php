@@ -15,6 +15,10 @@ class PageController extends Controller
     {
         return view('wishlist');
     }
+    public function shopFullwidthBanner()
+    {
+        return view('shop-fullwidth-banner');
+    }
 
     public function shopBannerSidebar()
     {
