@@ -114,4 +114,25 @@ class PageController extends Controller
     {
         return view('about-us');
     }
+
+    public function searchProducts(Request $request)
+    {
+        $searchTerm = $request->input('search');
+
+        if (!$searchTerm) {
+            return redirect()->back()->with('error', 'Please enter a search term.');
+        }
+
+        $response = Http::asForm()->post('https://prodhanltd.com/api/product_search.php', [
+            'search' => $searchTerm,
+        ]);
+
+        $searchResults = [];
+        $totalFound = 0;
+        if ($response->successful() && $response['error'] == 0) {
+            $searchResults = $response['search_result'];
+            $totalFound = $response['search_found'];
+        }
+        return view('search-product', compact('searchResults', 'searchTerm', 'totalFound'));
+    }
 }

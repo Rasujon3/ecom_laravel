@@ -39,4 +39,6 @@ Route::get('/cart', [PageController::class, 'cart']);
 
 Route::get('/about-us', [PageController::class, 'aboutUs'])->name('about-us');
 
+Route::get('/search-products', [PageController::class, 'searchProducts'])->name('search.products');
+
 Route::get('/', [PageController::class, 'index'])->name('home');

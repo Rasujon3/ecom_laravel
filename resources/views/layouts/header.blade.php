@@ -45,8 +45,8 @@
                     />
                 </a>
                 <form
-                    method="get"
-                    action="#"
+                    method="GET"
+                    action="{{ route('search.products') }}"
                     class="header-search hs-expanded hs-round d-none d-md-flex input-wrapper"
                 >
                     <div class="select-box">
@@ -75,6 +75,7 @@
                         <i class="w-icon-search"></i>
                     </button>
                 </form>
+
             </div>
             <div class="header-right ml-4">
                 <div class="header-call d-xs-show d-lg-flex align-items-center">
