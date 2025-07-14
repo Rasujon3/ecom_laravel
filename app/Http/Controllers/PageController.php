@@ -17,7 +17,11 @@ class PageController extends Controller
         $arrivalProductResponse = Http::asForm()->post('https://prodhanltd.com/api/home_page.php');
         $arrivalProducts = ($arrivalProductResponse->successful() && $arrivalProductResponse['error'] == 0) ? $arrivalProductResponse['report'] : [];
 
-        return view('index', compact('slides', 'arrivalProducts'));
+        // Featured Products data
+        $featuredProductResponse = Http::asForm()->post('https://prodhanltd.com/api/home_page_special.php');
+        $featuredProducts = ($featuredProductResponse->successful() && $featuredProductResponse['error'] == 0) ? $featuredProductResponse['report'] : [];
+
+        return view('index', compact('slides', 'arrivalProducts', 'featuredProducts'));
     }
 
     public function wishlist()

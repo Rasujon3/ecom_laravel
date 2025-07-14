@@ -27,15 +27,15 @@
     <!-- End of Category Accessories -->
 
     <!-- Start Banner Product Wrapper 2 -->
-    @include('home.productBanner2')
+    @include('home.productBanner2', ['featuredProducts' => $featuredProducts])
     <!-- End Banner Product Wrapper 2 -->
 
     <!-- Start of Tab Content (popularCategories) -->
-    @include('home.popularCategories')
+{{--    @include('home.popularCategories')--}}
     <!-- End of Tab Content (popularCategories) -->
 
     <!--Start of Blogs -->
-    @include('home.blogs')
+{{--    @include('home.blogs')--}}
     <!--End of Blogs -->
 </div>
 <!-- End of Main -->
