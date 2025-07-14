@@ -34,7 +34,7 @@
                         Tranding NIKE<br />Sneaker
                     </h3>
                     <a
-                        href="shop-banner-sidebar.html"
+                        href="{{ route('shopFullwidthBanner', ['category' => 'Mens Products']) }}"
                         class="btn btn-white btn-link btn-underline btn-icon-right"
                     >
                         Shop Now<i class="w-icon-long-arrow-right"></i>
@@ -62,7 +62,7 @@
                         Vegan Friendly<br />Makeup
                     </h3>
                     <a
-                        href="shop-banner-sidebar.html"
+                        href="{{ route('shopFullwidthBanner', ['category' => 'Health & Beauty']) }}"
                         class="btn btn-dark btn-link btn-underline btn-icon-right"
                     >
                         Shop Now<i class="w-icon-long-arrow-right"></i>
@@ -90,7 +90,7 @@
                         Fashion Apple<br />Accessories
                     </h3>
                     <a
-                        href="shop-banner-sidebar.html"
+                        href="{{ route('shopFullwidthBanner', ['category' => 'Accessories']) }}"
                         class="btn btn-white btn-link btn-underline btn-icon-right"
                     >
                         Shop Now<i class="w-icon-long-arrow-right"></i>

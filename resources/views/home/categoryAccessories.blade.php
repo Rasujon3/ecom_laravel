@@ -20,7 +20,7 @@
                     XBox Gaming<br />Accessories
                 </h3>
                 <a
-                    href="shop-banner-sidebar.html"
+                    href="{{ route('shopFullwidthBanner', ['category' => 'Accessories']) }}"
                     class="btn btn-white btn-link btn-underline btn-icon-right"
                 >
                     Shop Now<i class="w-icon-long-arrow-right"></i>
@@ -47,7 +47,7 @@
                     Fashion Figure<br />Skate Sale
                 </h3>
                 <a
-                    href="shop-banner-sidebar.html"
+                    href="{{ route('shopFullwidthBanner', ['category' => 'Mens Products']) }}"
                     class="btn btn-dark btn-link btn-underline btn-icon-right"
                 >
                     Shop Now<i class="w-icon-long-arrow-right"></i>

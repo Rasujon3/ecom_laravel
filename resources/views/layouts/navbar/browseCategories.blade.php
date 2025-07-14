@@ -7,7 +7,7 @@
     </a>
 
     <div class="dropdown-box">
-        <ul class="menu vertical-menu category-menu" style="max-height: 540px; overflow-y: auto;">
+        <ul class="menu vertical-menu category-menu" style="max-height: 510px; overflow-y: auto;">
             @foreach($categories as $cat)
                 <li>
                     <a href="{{ route('shopFullwidthBanner', ['category' => ($cat['Category'])]) }}">
