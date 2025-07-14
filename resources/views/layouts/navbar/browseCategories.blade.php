@@ -1,4 +1,4 @@
-<div id="menu-bar" class="dropdown category-dropdown" data-visible="true">
+<div id="menu-bar" class="dropdown category-dropdown {{ request()->is('/') ? 'show-dropdown' : '' }}" data-visible="true">
     <a href="#" class="text-white category-toggle" role="button"
        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
        data-display="static" title="Browse Categories">
@@ -7,7 +7,7 @@
     </a>
 
     <div class="dropdown-box">
-        <ul class="menu vertical-menu category-menu">
+        <ul class="menu vertical-menu category-menu" style="max-height: 540px; overflow-y: auto;">
             @foreach($categories as $cat)
                 <li>
                     <a href="{{ route('shopFullwidthBanner', ['category' => ($cat['Category'])]) }}">
