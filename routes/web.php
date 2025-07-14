@@ -21,7 +21,7 @@ Route::get('/shop-fullwidth-banner', [PageController::class, 'shopFullwidthBanne
 
 Route::get('/shop-banner-sidebar', [PageController::class, 'shopBannerSidebar'])->name('shop-banner-sidebar');
 
-Route::get('/product-details', [PageController::class, 'productDetails']);
+Route::get('/product-details', [PageController::class, 'productDetails'])->name('product-details');
 
 Route::get('/order', [PageController::class, 'order']);
 

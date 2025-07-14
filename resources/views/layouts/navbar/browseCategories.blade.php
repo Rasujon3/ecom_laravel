@@ -10,7 +10,7 @@
         <ul class="menu vertical-menu category-menu">
             @foreach($categories as $cat)
                 <li>
-                    <a href="{{ route('shopFullwidthBanner') }}">
+                    <a href="{{ route('shopFullwidthBanner', ['category' => ($cat['Category'])]) }}">
                         <img src="https://prodhanltd.com/{{ $cat['Image'] }}" alt="{{ $cat['Category'] }}" width="20" class="mr-2" style="object-fit: contain;">
                         {{ $cat['Category'] }}
                     </a>

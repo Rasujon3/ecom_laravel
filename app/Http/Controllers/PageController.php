@@ -20,9 +20,25 @@ class PageController extends Controller
     {
         return view('wishlist');
     }
-    public function shopFullwidthBanner()
+    public function shopFullwidthBanner(Request $request)
     {
-        return view('shop-fullwidth-banner');
+//        dd('$request',$request->all());
+        $category = $request->query('category'); // get from URL
+
+        $products = [];
+        if ($category) {
+            $response = Http::asForm()->post('https://prodhanltd.com/api/category_wise_prodict.php', [
+                'category' => $category,
+                'limit' => 100,
+                'type' => 0,
+            ]);
+
+            if ($response->successful() && $response['error'] == 0) {
+                $products = $response['report'];
+            }
+        }
+
+        return view('shop-fullwidth-banner', compact('products', 'category'));
     }
 
     public function shopBannerSidebar()
@@ -30,9 +46,26 @@ class PageController extends Controller
         return view('shop-banner-sidebar');
     }
 
-    public function productDetails()
+    public function productDetails(Request $request)
     {
-        return view('product-details');
+        $productId = $request->query('product_id'); // URL থেকে product_id
+
+        $product = null;
+        if ($productId) {
+            $response = Http::get('https://prodhanltd.com/api/product_details2.php', [
+                'product_id' => $productId
+            ]);
+
+            if ($response->successful() && $response['error'] == 0) {
+                $product = $response->json();
+            }
+        }
+
+        if (!$product || empty($product['title'])) {
+            abort(404, 'Product not found');
+        }
+
+        return view('product-details', compact('product'));
     }
 
     public function order()
