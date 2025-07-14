@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PageController;
 
-Route::get('/wishlist', [PageController::class, 'wishlist']);
+Route::get('/wishlist', [PageController::class, 'wishlist'])->name('wishlist');
 
 Route::get('/shop-fullwidth-banner', [PageController::class, 'shopFullwidthBanner'])->name('shopFullwidthBanner');
 
