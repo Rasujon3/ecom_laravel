@@ -13,7 +13,11 @@ class PageController extends Controller
         $sliderResponse = Http::get('https://prodhanltd.com/api/slide.php');
         $slides = ($sliderResponse->successful() && $sliderResponse['error'] == 0) ? $sliderResponse['report'] : [];
 
-        return view('index', compact('slides'));
+        // Arrival Products data
+        $arrivalProductResponse = Http::asForm()->post('https://prodhanltd.com/api/home_page.php');
+        $arrivalProducts = ($arrivalProductResponse->successful() && $arrivalProductResponse['error'] == 0) ? $arrivalProductResponse['report'] : [];
+
+        return view('index', compact('slides', 'arrivalProducts'));
     }
 
     public function wishlist()
@@ -22,7 +26,6 @@ class PageController extends Controller
     }
     public function shopFullwidthBanner(Request $request)
     {
-//        dd('$request',$request->all());
         $category = $request->query('category'); // get from URL
 
         $products = [];

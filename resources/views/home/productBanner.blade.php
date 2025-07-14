@@ -1,5 +1,5 @@
 <h2 class="title text-left appear-animate mb-5">
-    Clothing &amp; Appreal
+    Arrival Products
 </h2>
 <div class="row banner-product-wrapper appear-animate mb-10">
     <div class="col-lg-9 mb-4 mb-lg-0">
@@ -49,13 +49,14 @@
                         }"
         >
             <div class="swiper-wrapper row cols-md-4 cols-sm-3 cols-2">
-                <div class="swiper-slide product-wrap">
+                @foreach($arrivalProducts as $arrivalProduct)
+                    <div class="swiper-slide product-wrap">
                     <div class="product product-simple text-center">
                         <figure class="product-media">
-                            <a href="product-details.php">
+                            <a href="{{ route('product-details', ['product_id' => $arrivalProduct['Id']]) }}">
                                 <img
-                                    src="assets/images/demos/demo3/products/2-1-1.jpg"
-                                    alt="Product"
+                                    src="https://prodhanltd.com/{{ $arrivalProduct['Image'] }}"
+                                    alt="{{ $arrivalProduct['Title'] }}"
                                     width="330"
                                     height="338"
                                 />
@@ -80,7 +81,7 @@
                             </div>
                             <div class="product-action">
                                 <a
-                                    href="#"
+                                    href="{{ route('product-details', ['product_id' => $arrivalProduct['Id']]) }}"
                                     class="btn-product btn-quickview"
                                     title="Quick View"
                                 >Quick View</a
@@ -89,8 +90,8 @@
                         </figure>
                         <div class="product-details">
                             <h4 class="product-name">
-                                <a href="product-details.php"
-                                >Leather Stripe Watch</a
+                                <a href="{{ route('product-details', ['product_id' => $arrivalProduct['Id']]) }}"
+                                >{{ $arrivalProduct['Title'] }}</a
                                 >
                             </h4>
                             <div class="ratings-container">
@@ -98,13 +99,13 @@
                                     <span class="ratings" style="width: 100%"></span>
                                     <span class="tooltiptext tooltip-top"></span>
                                 </div>
-                                <a href="product-details.php" class="rating-reviews"
+                                <a href="{{ route('product-details', ['product_id' => $arrivalProduct['Id']]) }}" class="rating-reviews"
                                 >(3 reviews)</a
                                 >
                             </div>
                             <div class="product-pa-wrapper">
                                 <div class="product-price">
-                                    <ins class="new-price">$125.00</ins>
+                                    <ins class="new-price">৳ {{ $arrivalProduct['Price'] }}</ins>
                                 </div>
                                 <div class="product-action">
                                     <a
@@ -117,480 +118,10 @@
                         </div>
                     </div>
                 </div>
-                <!-- End of Product Wrap -->
-                <div class="swiper-slide product-wrap">
-                    <div class="product product-simple text-center">
-                        <figure class="product-media">
-                            <a href="product-details.php">
-                                <img
-                                    src="assets/images/demos/demo3/products/2-2.jpg"
-                                    alt="Product"
-                                    width="330"
-                                    height="338"
-                                />
-                            </a>
-                            <div class="product-action-vertical">
-                                <a
-                                    href="#"
-                                    class="btn-product-icon btn-wishlist w-icon-heart"
-                                    title="Add to wishlist"
-                                ></a>
-                                <a
-                                    href="#"
-                                    class="btn-product-icon btn-compare w-icon-compare"
-                                    title="Add to Compare"
-                                ></a>
-                            </div>
-                            <div class="product-action">
-                                <a
-                                    href="#"
-                                    class="btn-product btn-quickview"
-                                    title="Quick View"
-                                >Quick View</a
-                                >
-                            </div>
-                        </figure>
-                        <div class="product-details">
-                            <h4 class="product-name">
-                                <a href="product-details.php"
-                                >Cavin Fashion Suede Handbag</a
-                                >
-                            </h4>
-                            <div class="ratings-container">
-                                <div class="ratings-full">
-                                    <span class="ratings" style="width: 100%"></span>
-                                    <span class="tooltiptext tooltip-top"></span>
-                                </div>
-                                <a href="product-details.php" class="rating-reviews"
-                                >(3 reviews)</a
-                                >
-                            </div>
-                            <div class="product-pa-wrapper">
-                                <div class="product-price">
-                                    <ins class="new-price">$26.43</ins>
-                                </div>
-                                <div class="product-action">
-                                    <a
-                                        href="#"
-                                        class="btn-cart btn-product btn btn-icon-right btn-link btn-underline"
-                                    >Add To Cart</a
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End of Product Wrap -->
-                <div class="swiper-slide product-wrap">
-                    <div class="product product-simple text-center">
-                        <figure class="product-media">
-                            <a href="product-details.php">
-                                <img
-                                    src="assets/images/demos/demo3/products/2-3-1.jpg"
-                                    alt="Product"
-                                    width="330"
-                                    height="338"
-                                />
-                                <img
-                                    src="assets/images/demos/demo3/products/2-3-2.jpg"
-                                    alt="Product"
-                                    width="330"
-                                    height="338"
-                                />
-                            </a>
-                            <div class="product-action-vertical">
-                                <a
-                                    href="#"
-                                    class="btn-product-icon btn-wishlist w-icon-heart"
-                                    title="Add to wishlist"
-                                ></a>
-                                <a
-                                    href="#"
-                                    class="btn-product-icon btn-compare w-icon-compare"
-                                    title="Add to Compare"
-                                ></a>
-                            </div>
-                            <div class="product-action">
-                                <a
-                                    href="#"
-                                    class="btn-product btn-quickview"
-                                    title="Quick View"
-                                >Quick View</a
-                                >
-                            </div>
-                        </figure>
-                        <div class="product-details">
-                            <h4 class="product-name">
-                                <a href="product-details.php"
-                                >Multi Function Watch</a
-                                >
-                            </h4>
-                            <div class="ratings-container">
-                                <div class="ratings-full">
-                                    <span class="ratings" style="width: 100%"></span>
-                                    <span class="tooltiptext tooltip-top"></span>
-                                </div>
-                                <a href="product-details.php" class="rating-reviews"
-                                >(3 reviews)</a
-                                >
-                            </div>
-                            <div class="product-pa-wrapper">
-                                <div class="product-price">
-                                    <ins class="new-price">$110.00</ins>
-                                </div>
-                                <div class="product-action">
-                                    <a
-                                        href="#"
-                                        class="btn-cart btn-product btn btn-icon-right btn-link btn-underline"
-                                    >Add To Cart</a
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End of Product Wrap -->
-                <div class="swiper-slide product-wrap">
-                    <div class="product product-simple text-center">
-                        <figure class="product-media">
-                            <a href="product-details.php">
-                                <img
-                                    src="assets/images/demos/demo3/products/2-4.jpg"
-                                    alt="Product"
-                                    width="330"
-                                    height="338"
-                                />
-                            </a>
-                            <div class="product-action-vertical">
-                                <a
-                                    href="#"
-                                    class="btn-product-icon btn-wishlist w-icon-heart"
-                                    title="Add to wishlist"
-                                ></a>
-                                <a
-                                    href="#"
-                                    class="btn-product-icon btn-compare w-icon-compare"
-                                    title="Add to Compare"
-                                ></a>
-                            </div>
-                            <div class="product-action">
-                                <a
-                                    href="#"
-                                    class="btn-product btn-quickview"
-                                    title="Quick View"
-                                >Quick View</a
-                                >
-                            </div>
-                        </figure>
-                        <div class="product-details">
-                            <h4 class="product-name">
-                                <a href="product-details.php">Men's Suede Belt</a>
-                            </h4>
-                            <div class="ratings-container">
-                                <div class="ratings-full">
-                                    <span class="ratings" style="width: 100%"></span>
-                                    <span class="tooltiptext tooltip-top"></span>
-                                </div>
-                                <a href="product-details.php" class="rating-reviews"
-                                >(3 reviews)</a
-                                >
-                            </div>
-                            <div class="product-pa-wrapper">
-                                <div class="product-price">
-                                    <ins class="new-price">$26.49</ins>
-                                </div>
-                                <div class="product-action">
-                                    <a
-                                        href="#"
-                                        class="btn-cart btn-product btn btn-icon-right btn-link btn-underline"
-                                    >Add To Cart</a
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
                 <!-- End of Product Wrap -->
             </div>
         </div>
     </div>
-    <div class="col-lg-3">
-        <div
-            class="widget widget-products widget-products-bordered h-100"
-        >
-            <div class="widget-body br-sm pb-2 h-100">
-                <h4
-                    class="title-sm title-underline font-weight-bolder ls-normal mb-2"
-                >
-                    Recommend
-                </h4>
-                <div class="swiper">
-                    <div
-                        class="swiper-container swiper-theme nav-top"
-                        data-swiper-options="{
-                                        'slidesPerView': 1,
-                                        'spaceBetween': 20,
-                                        'breakpoints': {
-                                            '576': {
-                                                'slidesPerView': 2
-                                            },
-                                            '992': {
-                                                'slidesPerView': 1
-                                            }
-                                        }
-                                    }"
-                    >
-                        <div class="swiper-wrapper row cols-lg-1 cols-md-3">
-                            <div class="swiper-slide product-widget-wrap">
-                                <div class="product product-widget bb-no">
-                                    <figure class="product-media">
-                                        <a href="product-details.php">
-                                            <img
-                                                src="assets/images/demos/demo3/products/3-1.jpg"
-                                                alt="Product"
-                                                width="105"
-                                                height="118"
-                                            />
-                                        </a>
-                                    </figure>
-                                    <div class="product-details">
-                                        <h4 class="product-name">
-                                            <a href="product-details.php">T-Shirt</a>
-                                        </h4>
-                                        <div class="ratings-container">
-                                            <div class="ratings-full">
-                                  <span
-                                      class="ratings"
-                                      style="width: 80%"
-                                  ></span>
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div>
-                                        </div>
-                                        <div class="product-price">
-                                            <ins class="new-price">$20.00</ins>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product product-widget bb-no">
-                                    <figure class="product-media">
-                                        <a href="product-details.php">
-                                            <img
-                                                src="assets/images/demos/demo3/products/3-2.jpg"
-                                                alt="Product"
-                                                width="105"
-                                                height="118"
-                                            />
-                                        </a>
-                                    </figure>
-                                    <div class="product-details">
-                                        <h4 class="product-name">
-                                            <a href="product-details.php"
-                                            >Best Pedestrian Bag</a
-                                            >
-                                        </h4>
-                                        <div class="ratings-container">
-                                            <div class="ratings-full">
-                                  <span
-                                      class="ratings"
-                                      style="width: 80%"
-                                  ></span>
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div>
-                                        </div>
-                                        <div class="product-price">
-                                            <ins class="new-price">$35.88</ins>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product product-widget bb-no">
-                                    <figure class="product-media">
-                                        <a href="product-details.php">
-                                            <img
-                                                src="assets/images/demos/demo3/products/3-3.jpg"
-                                                alt="Product"
-                                                width="105"
-                                                height="118"
-                                            />
-                                        </a>
-                                    </figure>
-                                    <div class="product-details">
-                                        <h4 class="product-name">
-                                            <a href="product-details.php"
-                                            >Fashionable Original Coat</a
-                                            >
-                                        </h4>
-                                        <div class="ratings-container">
-                                            <div class="ratings-full">
-                                  <span
-                                      class="ratings"
-                                      style="width: 60%"
-                                  ></span>
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div>
-                                        </div>
-                                        <div class="product-price">
-                                            <ins class="new-price">$89.00</ins>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product product-widget">
-                                    <figure class="product-media">
-                                        <a href="product-details.php">
-                                            <img
-                                                src="assets/images/demos/demo3/products/3-4.jpg"
-                                                alt="Product"
-                                                width="105"
-                                                height="118"
-                                            />
-                                        </a>
-                                    </figure>
-                                    <div class="product-details">
-                                        <h4 class="product-name">
-                                            <a href="product-details.php">Classic Hat</a>
-                                        </h4>
-                                        <div class="ratings-container">
-                                            <div class="ratings-full">
-                                  <span
-                                      class="ratings"
-                                      style="width: 60%"
-                                  ></span>
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div>
-                                        </div>
-                                        <div class="product-price">
-                                            <ins class="new-price">$23.00</ins>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide product-widget-wrap">
-                                <div class="product product-widget bb-no">
-                                    <figure class="product-media">
-                                        <a href="product-details.php">
-                                            <img
-                                                src="assets/images/demos/demo3/products/3-5.jpg"
-                                                alt="Product"
-                                                width="105"
-                                                height="118"
-                                            />
-                                        </a>
-                                    </figure>
-                                    <div class="product-details">
-                                        <h4 class="product-name">
-                                            <a href="product-details.php">Smart Watch</a>
-                                        </h4>
-                                        <div class="ratings-container">
-                                            <div class="ratings-full">
-                                  <span
-                                      class="ratings"
-                                      style="width: 100%"
-                                  ></span>
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div>
-                                        </div>
-                                        <div class="product-price">
-                                            <ins class="new-price">$230.95</ins>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product product-widget bb-no">
-                                    <figure class="product-media">
-                                        <a href="product-details.php">
-                                            <img
-                                                src="assets/images/demos/demo3/products/3-6.jpg"
-                                                alt="Product"
-                                                width="105"
-                                                height="118"
-                                            />
-                                        </a>
-                                    </figure>
-                                    <div class="product-details">
-                                        <h4 class="product-name">
-                                            <a href="product-details.php"
-                                            >Women's Comforter</a
-                                            >
-                                        </h4>
-                                        <div class="ratings-container">
-                                            <div class="ratings-full">
-                                  <span
-                                      class="ratings"
-                                      style="width: 100%"
-                                  ></span>
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div>
-                                        </div>
-                                        <div class="product-price">
-                                            <ins class="new-price">$24.00</ins>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product product-widget bb-no">
-                                    <figure class="product-media">
-                                        <a href="product-details.php">
-                                            <img
-                                                src="assets/images/demos/demo3/products/3-7.jpg"
-                                                alt="Product"
-                                                width="105"
-                                                height="118"
-                                            />
-                                        </a>
-                                    </figure>
-                                    <div class="product-details">
-                                        <h4 class="product-name">
-                                            <a href="product-details.php"
-                                            >Fashionable Leather Satchel</a
-                                            >
-                                        </h4>
-                                        <div class="ratings-container">
-                                            <div class="ratings-full">
-                                  <span
-                                      class="ratings"
-                                      style="width: 100%"
-                                  ></span>
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div>
-                                        </div>
-                                        <div class="product-price">
-                                            <ins class="new-price">$25.68</ins>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product product-widget">
-                                    <figure class="product-media">
-                                        <a href="product-details.php">
-                                            <img
-                                                src="assets/images/demos/demo3/products/3-8.jpg"
-                                                alt="Product"
-                                                width="105"
-                                                height="118"
-                                            />
-                                        </a>
-                                    </figure>
-                                    <div class="product-details">
-                                        <h4 class="product-name">
-                                            <a href="product-details.php">Gold Watch</a>
-                                        </h4>
-                                        <div class="ratings-container">
-                                            <div class="ratings-full">
-                                  <span
-                                      class="ratings"
-                                      style="width: 100%"
-                                  ></span>
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div>
-                                        </div>
-                                        <div class="product-price">
-                                            <ins class="new-price">$189.90</ins>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="swiper-button-next"></button>
-                        <button class="swiper-button-prev"></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    @include('home.recommendedProductBanner')
 </div>

@@ -15,11 +15,11 @@
     <!-- End of Category Wrapper (brands) -->
 
     <!-- End of Deals Wrapper (hotDeals) -->
-    @include('home.hotDeals')
+{{--    @include('home.hotDeals')--}}
     <!-- End of Deals Wrapper (hotDeals) -->
 
     <!-- Start Banner Product Wrapper -->
-    @include('home.productBanner')
+    @include('home.productBanner', ['arrivalProducts' => $arrivalProducts])
     <!-- End Banner Product Wrapper -->
 
     <!-- Start of Category Accessories -->
