@@ -13,11 +13,7 @@ class PageController extends Controller
         $sliderResponse = Http::get('https://prodhanltd.com/api/slide.php');
         $slides = ($sliderResponse->successful() && $sliderResponse['error'] == 0) ? $sliderResponse['report'] : [];
 
-        // Categories data (POST method)
-        $categoryResponse = Http::asForm()->post('https://prodhanltd.com/api/home_page_category.php');
-        $categories = ($categoryResponse->successful() && $categoryResponse['error'] == 0) ? $categoryResponse['report'] : [];
-
-        return view('index', compact('slides', 'categories'));
+        return view('index', compact('slides'));
     }
 
     public function wishlist()
