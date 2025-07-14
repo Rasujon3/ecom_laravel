@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <!-- Start of Intro Wrapper (Slider) -->
-    @include('home.slider')
+    @include('home.slider', ['slides' => $slides])
     <!-- End of Intro Wrapper (Slider) -->
 
     <!-- Start of Iocn Box Wrapper -->

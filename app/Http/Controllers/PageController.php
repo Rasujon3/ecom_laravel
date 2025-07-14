@@ -3,12 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class PageController extends Controller
 {
     public function index()
     {
-        return view('index');
+        $response = Http::get('https://prodhanltd.com/api/slide.php');
+
+        // Check if API call is successful and contains data
+        if ($response->successful() && $response['error'] == 0) {
+            $slides = $response['report'];
+        } else {
+            $slides = []; // fallback to empty array
+        }
+
+        return view('index', compact('slides'));
     }
 
     public function wishlist()
