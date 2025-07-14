@@ -26,12 +26,12 @@
         <div
             class="swiper-wrapper row cols-xl-6 cols-lg-5 cols-md-4 cols-sm-3 cols-2"
         >
+            @foreach($categories as $cat)
             <div class="swiper-slide category category-ellipse">
                 <figure class="category-media">
-                    <a href="shop-banner-sidebar.html">
+                    <a href="{{ route('shopFullwidthBanner', ['category' => ($cat['Category'])]) }}">
                         <img
-                            src="assets/images/demos/demo3/categories/4.jpg"
-                            alt="Categroy"
+                            src="https://prodhanltd.com/{{ $cat['Image'] }}" alt="{{ $cat['Category'] }}"
                             width="190"
                             height="190"
                             style="background-color: #5c92c0"
@@ -40,100 +40,11 @@
                 </figure>
                 <div class="category-content">
                     <h4 class="category-name">
-                        <a href="shop-banner-sidebar.html">Adidas</a>
+                        <a href="{{ route('shopFullwidthBanner', ['category' => ($cat['Category'])]) }}">{{ $cat['Category'] }}</a>
                     </h4>
                 </div>
             </div>
-            <div class="swiper-slide category category-ellipse">
-                <figure class="category-media">
-                    <a href="shop-banner-sidebar.html">
-                        <img
-                            src="assets/images/demos/demo3/categories/5.jpg"
-                            alt="Categroy"
-                            width="190"
-                            height="190"
-                            style="background-color: #9bc4ca"
-                        />
-                    </a>
-                </figure>
-                <div class="category-content">
-                    <h4 class="category-name">
-                        <a href="shop-banner-sidebar.html">Nike</a>
-                    </h4>
-                </div>
-            </div>
-            <div class="swiper-slide category category-ellipse">
-                <figure class="category-media">
-                    <a href="shop-banner-sidebar.html">
-                        <img
-                            src="assets/images/demos/demo3/categories/6.jpg"
-                            alt="Categroy"
-                            width="190"
-                            height="190"
-                            style="background-color: #48555b"
-                        />
-                    </a>
-                </figure>
-                <div class="category-content">
-                    <h4 class="category-name">
-                        <a href="shop-banner-sidebar.html">Samsung</a>
-                    </h4>
-                </div>
-            </div>
-            <div class="swiper-slide category category-ellipse">
-                <figure class="category-media">
-                    <a href="shop-banner-sidebar.html">
-                        <img
-                            src="assets/images/demos/demo3/categories/7.jpg"
-                            alt="Categroy"
-                            width="190"
-                            height="190"
-                            style="background-color: #d4e5ef"
-                        />
-                    </a>
-                </figure>
-                <div class="category-content">
-                    <h4 class="category-name">
-                        <a href="shop-banner-sidebar.html">Xbox</a>
-                    </h4>
-                </div>
-            </div>
-            <div class="swiper-slide category category-ellipse">
-                <figure class="category-media">
-                    <a href="shop-banner-sidebar.html">
-                        <img
-                            src="assets/images/demos/demo3/categories/8.jpg"
-                            alt="Categroy"
-                            width="190"
-                            height="190"
-                            style="background-color: #6a7881"
-                        />
-                    </a>
-                </figure>
-                <div class="category-content">
-                    <h4 class="category-name">
-                        <a href="shop-banner-sidebar.html">Xiaomi</a>
-                    </h4>
-                </div>
-            </div>
-            <div class="swiper-slide category category-ellipse">
-                <figure class="category-media">
-                    <a href="shop-banner-sidebar.html">
-                        <img
-                            src="assets/images/demos/demo3/categories/9.jpg"
-                            alt="Categroy"
-                            width="190"
-                            height="190"
-                            style="background-color: #e4e4e4"
-                        />
-                    </a>
-                </figure>
-                <div class="category-content">
-                    <h4 class="category-name">
-                        <a href="shop-banner-sidebar.html">Apple</a>
-                    </h4>
-                </div>
-            </div>
+            @endforeach
         </div>
         <div class="swiper-pagination"></div>
     </div>
