@@ -18,7 +18,7 @@
             @endforeach
 
             <li>
-                <a href="{{ route('shopFullwidthBanner') }}" class="font-weight-bold text-uppercase ls-25">
+                <a href="{{ route('shopFullwidthBanner', ['category' => 'Accessories']) }}" class="font-weight-bold text-uppercase ls-25">
                     View All Categories <i class="w-icon-angle-right"></i>
                 </a>
             </li>

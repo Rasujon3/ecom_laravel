@@ -52,7 +52,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product-price">
-                                                    <ins class="new-price">৳{{ $product['Price'] }}</ins>
+                                                    <ins class="new-price">৳ {{ $product['Price'] }}</ins>
                                                 </div>
                                             </div>
                                         </div>

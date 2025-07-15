@@ -26,7 +26,7 @@
                     >
                 </h3>
                 <a
-                    href="shop-banner-sidebar.html"
+                    href="{{ route('shopFullwidthBanner', ['category' => 'Accessories']) }}"
                     class="btn btn-white btn-outline btn-rounded"
                 >Shop Now</a
                 >
@@ -96,7 +96,7 @@
                                 </div>
                                 <div class="product-pa-wrapper">
                                     <div class="product-price">
-                                        <ins class="new-price">$ {{ $featuredProduct['Price'] }}</ins>
+                                        <ins class="new-price">৳ {{ $featuredProduct['Price'] }}</ins>
                                     </div>
                                     <div class="product-action">
                                         <a

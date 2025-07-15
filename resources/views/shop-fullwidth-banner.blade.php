@@ -113,7 +113,7 @@
                                                     <a href="#" class="rating-reviews">(0 reviews)</a>
                                                 </div>
                                                 <div class="product-pa-wrapper">
-                                                    <div class="product-price">৳{{ $product['Price'] }}</div>
+                                                    <div class="product-price">৳ {{ $product['Price'] }}</div>
                                                 </div>
                                             </div>
                                         </div>
