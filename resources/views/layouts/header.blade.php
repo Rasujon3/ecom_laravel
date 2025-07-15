@@ -103,99 +103,7 @@
                     <i class="w-icon-heart"></i>
                     <span class="wishlist-label d-lg-show">Wishlist</span>
                 </a>
-
-                <div class="dropdown cart-dropdown cart-offcanvas mr-0 mr-lg-2">
-                    <div class="cart-overlay"></div>
-                    <a href="#" class="cart-toggle label-down link">
-                        <i class="w-icon-cart">
-                            <span class="cart-count">2</span>
-                        </i>
-                        <span class="cart-label">Cart</span>
-                    </a>
-                    <div class="dropdown-box">
-                        <div class="cart-header">
-                            <span>Shopping Cart</span>
-                            <a href="#" class="btn-close"
-                            >Close<i class="w-icon-long-arrow-right"></i
-                                ></a>
-                        </div>
-
-                        <div class="products">
-                            <div class="product product-cart">
-                                <div class="product-detail">
-                                    <a href="product-default.html" class="product-name"
-                                    >Beige knitted elas<br/>tic runner shoes</a
-                                    >
-                                    <div class="price-box">
-                                        <span class="product-quantity">1</span>
-                                        <span class="product-price">$25.68</span>
-                                    </div>
-                                </div>
-                                <figure class="product-media">
-                                    <a href="product-default.html">
-                                        <img
-                                            src="{{ asset('assets/images/cart/product-1.jpg') }}"
-                                            alt="product"
-                                            height="84"
-                                            width="94"
-                                        />
-                                    </a>
-                                </figure>
-                                <button
-                                    class="btn btn-link btn-close"
-                                    aria-label="button"
-                                >
-                                    <i class="fas fa-times"></i>
-                                </button>
-                            </div>
-
-                            <div class="product product-cart">
-                                <div class="product-detail">
-                                    <a href="product-default.html" class="product-name"
-                                    >Blue utility pina<br/>fore denim dress</a
-                                    >
-                                    <div class="price-box">
-                                        <span class="product-quantity">1</span>
-                                        <span class="product-price">$32.99</span>
-                                    </div>
-                                </div>
-                                <figure class="product-media">
-                                    <a href="product-default.html">
-                                        <img
-                                            src="{{ asset('assets/images/cart/product-2.jpg') }}"
-                                            alt="product"
-                                            width="84"
-                                            height="94"
-                                        />
-                                    </a>
-                                </figure>
-                                <button
-                                    class="btn btn-link btn-close"
-                                    aria-label="button"
-                                >
-                                    <i class="fas fa-times"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="cart-total">
-                            <label>Subtotal:</label>
-                            <span class="price">$58.67</span>
-                        </div>
-
-                        <div class="cart-action">
-                            <a
-                                href="cart.php"
-                                class="btn btn-dark btn-outline btn-rounded"
-                            >View Cart</a
-                            >
-                            <a href="checkout.php" class="btn btn-primary btn-rounded"
-                            >Checkout</a
-                            >
-                        </div>
-                    </div>
-                    <!-- End of Dropdown Box -->
-                </div>
+                @include('partials.cart-dropdown')
             </div>
         </div>
     </div>
@@ -214,3 +122,84 @@
         </div>
     </div>
 </header>
+
+<script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
+
+<script>
+    function updateCartDropdown() {
+        $.ajax({
+            url: "{{ route('cart.html') }}",
+            type: "GET",
+            success: function (res) {
+                if (res.status) {
+                    $('#cart-dropdown-box').html($(res.html).find('#cart-dropdown-box').html());
+                    $('#cart-count').text($(res.html).find('#cart-count').text());
+                }
+            },
+            error: function () {
+                console.error("Failed to update cart.");
+            }
+        });
+    }
+
+    // After successfully adding to cart
+    $(document).on('click', '.btn-cart', function (e) {
+        e.preventDefault();
+
+        const product = $(this).data(); // expects data attributes on the button
+        const btn = $(this);
+
+        try {
+            $.ajax({
+                url: "{{ route('cart.add') }}",
+                method: 'POST',
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    product_id: product.id,
+                    title: product.title,
+                    image: product.image,
+                    price: product.price,
+                    point: product.point
+                },
+                success: function (res) {
+                    console.log('res',res)
+                    if (res.status) {
+                        updateCartDropdown();
+                        alert('Added to cart!');
+                    } else {
+                        alert(res.message);
+                    }
+                },
+                error: function () {
+                    alert('Failed to add product to cart.');
+                }
+            });
+        } catch (error) {
+            alert('Something went wrong!!!');
+        }
+    });
+
+    // Handle removal
+    $(document).on('click', '.remove-cart', function () {
+        const id = $(this).data('id');
+
+        try {
+            $.ajax({
+                url: '/cart/remove/' + id,
+                method: 'POST',
+                data: {
+                    _token: '{{ csrf_token() }}'
+                },
+                success: function () {
+                    updateCartDropdown();
+                },
+                error: function () {
+                    alert('Could not remove item.');
+                }
+            });
+        } catch (error) {
+            alert('Something went wrong!!!');
+        }
+    });
+</script>
+

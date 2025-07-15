@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\WishlistController;
 use Illuminate\Support\Facades\Route;
 
@@ -47,5 +48,12 @@ Route::get('/', [PageController::class, 'index'])->name('home');
 Route::post('/wishlist/add', [WishlistController::class, 'add'])->name('wishlist.add');
 
 Route::post('/wishlist/remove/{id}', [WishlistController::class, 'remove'])->name('wishlist.remove');
+
+Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
+
+Route::post('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
+
+Route::get('/cart/html', [CartController::class, 'getCartHtml'])->name('cart.html');
+
 
 

@@ -12,7 +12,7 @@
         <p>Account</p>
     </a>
     <div class="cart-dropdown dir-up">
-        <a href="cart.html" class="sticky-link">
+        <a href="{{ route('cart') }}" class="sticky-link">
             <i class="w-icon-cart"></i>
             <p>Cart</p>
         </a>
@@ -79,7 +79,7 @@
             </div>
 
             <div class="cart-action">
-                <a href="cart.html" class="btn btn-dark btn-outline btn-rounded"
+                <a href="{{ route('cart') }}" class="btn btn-dark btn-outline btn-rounded"
                 >View Cart</a
                 >
                 <a href="checkout.html" class="btn btn-primary btn-rounded"

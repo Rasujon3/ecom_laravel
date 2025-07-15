@@ -6,9 +6,9 @@
         <nav class="breadcrumb-nav">
           <div class="container">
             <ul class="breadcrumb shop-breadcrumb bb-no">
-              <li class="active"><a href="cart.php">Shopping Cart</a></li>
-              <li><a href="checkout.php">Checkout</a></li>
-              <li><a href="order.php">Order Complete</a></li>
+              <li class="active"><a href="{{ route('cart') }}">Shopping Cart</a></li>
+              <li><a href="{{ route('checkout') }}">Checkout</a></li>
+              <li><a href="{{ route('order') }}">Order Complete</a></li>
             </ul>
           </div>
         </nav>
@@ -30,116 +30,49 @@
                     </tr>
                   </thead>
                   <tbody>
+                  @forelse($cart as $item)
                     <tr>
                       <td class="product-thumbnail">
                         <div class="p-relative">
-                          <a href="product-default.html">
+                          <a href="{{ route('product-details', ['product_id' => $item['id']]) }}">
                             <figure>
                               <img
-{{--                                src="assets/images/shop/12.jpg"--}}
-                                src="{{ asset('assets/images/shop/12.jpg') }}"
-                                alt="product"
+                                src="{{ $item['image'] }}"
+                                alt="{{ $item['title'] }}"
                                 width="300"
                                 height="338"
                               />
                             </figure>
                           </a>
-                          <button type="submit" class="btn btn-close">
+                          <button class="btn btn-close remove-cart" data-id="{{ $item['id'] }}">
                             <i class="fas fa-times"></i>
                           </button>
                         </div>
                       </td>
                       <td class="product-name">
-                        <a href="product-default.html">
-                          Classic Simple Backpack
+                        <a href="{{ route('product-details', ['product_id' => $item['id']]) }}">
+                            {{ $item['title'] }}
                         </a>
                       </td>
                       <td class="product-price">
-                        <span class="amount">$40.00</span>
+                        <span class="amount">৳ {{ $item['price'] }}</span>
                       </td>
                       <td class="product-quantity">
-                        <div class="input-group">
-                          <input
-                            class="quantity form-control"
-                            type="number"
-                            min="1"
-                            max="100000"
-                          />
-                          <button class="quantity-plus w-icon-plus"></button>
-                          <button class="quantity-minus w-icon-minus"></button>
-                        </div>
+                          <span class="amount">1</span>
                       </td>
                       <td class="product-subtotal">
-                        <span class="amount">$40.00</span>
+                        <span class="amount">৳ {{ $item['price'] }}</span>
                       </td>
                     </tr>
-                    <tr>
-                      <td class="product-thumbnail">
-                        <div class="p-relative">
-                          <a href="product-default.html">
-                            <figure>
-                              <img
-{{--                                src="assets/images/shop/13.jpg"--}}
-                                src="{{ asset('assets/images/shop/13.jpg') }}"
-                                alt="product"
-                                width="300"
-                                height="338"
-                              />
-                            </figure>
-                          </a>
-                          <button class="btn btn-close">
-                            <i class="fas fa-times"></i>
-                          </button>
-                        </div>
-                      </td>
-                      <td class="product-name">
-                        <a href="product-default.html"> Smart Watch </a>
-                      </td>
-                      <td class="product-price">
-                        <span class="amount">$60.00</span>
-                      </td>
-                      <td class="product-quantity">
-                        <div class="input-group">
-                          <input
-                            class="quantity form-control"
-                            type="number"
-                            min="1"
-                            max="100000"
-                          />
-                          <button class="quantity-plus w-icon-plus"></button>
-                          <button class="quantity-minus w-icon-minus"></button>
-                        </div>
-                      </td>
-                      <td class="product-subtotal">
-                        <span class="amount">$60.00</span>
-                      </td>
-                    </tr>
+                  @empty
+                      <tr>
+                          <td colspan="5" class="text-center">Your cart is empty.</td>
+                      </tr>
+                  @endforelse
                   </tbody>
                 </table>
 
-                <div class="cart-action mb-6">
-                  <a
-                    href="#"
-                    class="btn btn-dark btn-rounded btn-icon-left btn-shopping mr-auto"
-                    ><i class="w-icon-long-arrow-left"></i>Continue Shopping</a
-                  >
-                  <button
-                    type="submit"
-                    class="btn btn-rounded btn-default btn-clear"
-                    name="clear_cart"
-                    value="Clear Cart"
-                  >
-                    Clear Cart
-                  </button>
-                  <button
-                    type="submit"
-                    class="btn btn-rounded btn-update disabled"
-                    name="update_cart"
-                    value="Update Cart"
-                  >
-                    Update Cart
-                  </button>
-                </div>
+{{--                @include('partials.cartAction')--}}
 
                 <form class="coupon">
                   <h5
@@ -166,7 +99,7 @@
                       class="cart-subtotal d-flex align-items-center justify-content-between"
                     >
                       <label class="ls-25">Subtotal</label>
-                      <span>$100.00</span>
+                      <span>৳ {{ $cartSubtotal }}</span>
                     </div>
 
                     <hr class="divider" />
@@ -224,6 +157,7 @@
                       </li>
                     </ul>
 
+                      {{--
                     <div class="shipping-calculator">
                       <p class="shipping-destination lh-1">
                         Shipping to <strong>CA</strong>.
@@ -283,13 +217,14 @@
                         </button>
                       </form>
                     </div>
+                      --}}
 
                     <hr class="divider mb-6" />
                     <div
                       class="order-total d-flex justify-content-between align-items-center"
                     >
                       <label>Total</label>
-                      <span class="ls-50">$100.00</span>
+                      <span class="ls-50">৳ {{ $cartSubtotal }}</span>
                     </div>
                     <a
                       href="#"
@@ -306,3 +241,43 @@
         <!-- End of PageContent -->
       </main>
 @endsection
+
+<script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
+
+<script>
+    function updateCartDropdown() {
+        $.ajax({
+            url: "{{ route('cart.html') }}",
+            type: "GET",
+            success: function (res) {
+                if (res.status) {
+                    $('#cart-dropdown-box').html($(res.html).find('#cart-dropdown-box').html());
+                    $('#cart-count').text($(res.html).find('#cart-count').text());
+                }
+            },
+            error: function () {
+                console.error("Failed to update cart.");
+            }
+        });
+    }
+
+    // Handle removal
+    $(document).on('click', '.remove-cart', function () {
+        const id = $(this).data('id');
+
+        $.ajax({
+            url: '/cart/remove/' + id,
+            method: 'POST',
+            data: {
+                _token: '{{ csrf_token() }}'
+            },
+            success: function () {
+                updateCartDropdown();
+                window.location.reload();
+            },
+            error: function () {
+                alert('Could not remove item.');
+            }
+        });
+    });
+</script>

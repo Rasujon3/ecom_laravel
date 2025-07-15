@@ -12,11 +12,11 @@
 
     <meta
       name="keywords"
-      content="RIT commerce"
+      content="{{ session('about_us.institute_name') ?? 'RIT Ecommerce' }}"
     />
     <meta
       name="description"
-      content="RIT is Bangladesh top leading ecommerce business"
+      content="{{ session('about_us.institute_name') ?? 'RIT Ecommerce' }} is Bangladesh top leading ecommerce business"
     />
     <meta name="author" content="D-THEMES" />
 

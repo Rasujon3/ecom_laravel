@@ -253,17 +253,17 @@
                     <li>
                         <a href="about-us.html">Pages</a>
                         <ul>
-                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="{{ route('about-us') }}">About Us</a></li>
                             <li><a href="become-a-vendor.html">Become A Vendor</a></li>
-                            <li><a href="contact-us.html">Contact Us</a></li>
-                            <li><a href="login.html">Login</a></li>
-                            <li><a href="faq.html">FAQs</a></li>
+                            <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
+                            <li><a href="{{ route('login') }}">Login</a></li>
+                            <li><a href="{{ route('faq') }}">FAQs</a></li>
                             <li><a href="error-404.html">Error 404</a></li>
                             <li><a href="coming-soon.html">Coming Soon</a></li>
-                            <li><a href="wishlist.html">Wishlist</a></li>
-                            <li><a href="cart.html">Cart</a></li>
-                            <li><a href="checkout.html">Checkout</a></li>
-                            <li><a href="my-account.html">My Account</a></li>
+                            <li><a href="{{ route('wishlist') }}">Wishlist</a></li>
+                            <li><a href="{{ route('cart') }}">Cart</a></li>
+                            <li><a href="{{ route('checkout') }}">Checkout</a></li>
+                            <li><a href="{{ route('my-account') }}">My Account</a></li>
                         </ul>
                     </li>
                     <li>

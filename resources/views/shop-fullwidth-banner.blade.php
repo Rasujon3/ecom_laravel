@@ -92,7 +92,15 @@
                                                     />
                                                 </a>
                                                 <div class="product-action-horizontal">
-                                                    <a href="#" class="btn-product-icon btn-cart w-icon-cart" title="Add to cart"></a>
+                                                    <a href="javascript:void(0);"
+                                                       class="btn-product-icon btn-cart w-icon-cart add-to-cart"
+                                                       data-id="{{ $product['Id'] }}"
+                                                       data-title="{{ $product['Title'] }}"
+                                                       data-image="https://prodhanltd.com/{{ $product['Image'] }}"
+                                                       data-price="{{ $product['Price'] }}"
+                                                       data-point="{{ $product['point'] ?? 0 }}"
+                                                       title="Add to cart"></a>
+
                                                     <a href="javascript:void(0);"
                                                        class="btn-product-icon btn-wishlist w-icon-heart add-to-wishlist"
                                                        data-id="{{ $product['Id'] }}"
@@ -102,7 +110,7 @@
                                                        data-point="{{ $product['point'] ?? 0 }}"
                                                        title="Wishlist"></a>
                                                     <a href="#" class="btn-product-icon btn-compare w-icon-compare" title="Compare"></a>
-                                                    <a href="#" class="btn-product-icon btn-quickview w-icon-search" title="Quick View"></a>
+                                                    <a href="{{ route('product-details', ['product_id' => $product['Id']]) }}" class="btn-product-icon btn-quickview w-icon-search" title="Quick View"></a>
                                                 </div>
                                             </figure>
                                             <div class="product-details">
@@ -285,6 +293,7 @@
 <script>
     $(document).ready(function () {
         $('.add-to-wishlist').on('click', function () {
+            e.preventDefault();
             let el = $(this);
             let product_id = el.data('id');
 
@@ -311,6 +320,57 @@
                     alert('❌ Failed to add to wishlist.');
                 }
             });
+        });
+
+        function updateCartDropdown() {
+            $.ajax({
+                url: "{{ route('cart.html') }}",
+                type: "GET",
+                success: function (res) {
+                    if (res.status) {
+                        $('#cart-dropdown-box').html($(res.html).find('#cart-dropdown-box').html());
+                        $('#cart-count').text($(res.html).find('#cart-count').text());
+                    }
+                },
+                error: function () {
+                    console.error("Failed to update cart.");
+                }
+            });
+        }
+
+        $('.add-to-cart').one('click', function () {
+            e.preventDefault();
+            let el = $(this);
+            let product_id = el.data('id');
+
+            try {
+                $.ajax({
+                    url: '{{ route("cart.add") }}',
+                    type: 'POST',
+                    data: {
+                        _token: '{{ csrf_token() }}',
+                        product_id: product_id,
+                        title: el.data('title'),
+                        image: el.data('image'),
+                        price: el.data('price'),
+                        point: el.data('point')
+                    },
+                    success: function (response) {
+                        if (response.status) {
+                            alert('✔️ ' + response.message);
+                            el.addClass('disabled').css('pointer-events', 'none');
+                            updateCartDropdown();
+                        } else {
+                            alert('⚠️ ' + response.message);
+                        }
+                    },
+                    error: function (xhr) {
+                        alert('❌ Failed to add to cart.');
+                    }
+                });
+            } catch (error) {
+                alert('Something went wrong!!!');
+            }
         });
     });
 </script>

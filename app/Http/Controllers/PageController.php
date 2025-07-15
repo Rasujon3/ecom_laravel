@@ -125,7 +125,10 @@ class PageController extends Controller
 
     public function cart()
     {
-        return view('cart');
+        $cart = session()->get('cart', []);
+        $cartCount = count($cart);
+        $cartSubtotal = array_sum(array_column($cart, 'price'));
+        return view('cart', compact('cart', 'cartCount', 'cartSubtotal'));
     }
 
     public function aboutUs()

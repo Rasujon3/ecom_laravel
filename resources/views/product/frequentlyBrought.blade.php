@@ -85,7 +85,7 @@
                 $1,874.00
             </div>
             <div class="bought-count">For 3 items</div>
-            <a href="cart.html" class="btn btn-dark btn-rounded"
+            <a href="{{ route('cart') }}" class="btn btn-dark btn-rounded"
             >Add All To Cart</a
             >
         </div>
