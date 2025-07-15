@@ -25,65 +25,50 @@
               <!-- Start of Shop Main Content -->
               <div class="main-content">
                   @include('shop.nav')
-                <div class="product-wrapper row cols-md-3 cols-sm-2 cols-2">
-                  <div class="product-wrap">
-                    <div class="product text-center">
-                      <figure class="product-media">
-                        <a href="product-default.html">
-                          <img
-                            src="{{ asset('assets/images/shop/1.jpg') }}"
-                            alt="Product"
-                            width="300"
-                            height="338"
-                          />
-                        </a>
-                        <div class="product-action-horizontal">
-                          <a
-                            href="#"
-                            class="btn-product-icon btn-cart w-icon-cart"
-                            title="Add to cart"
-                          ></a>
-                          <a
-                            href="#"
-                            class="btn-product-icon btn-wishlist w-icon-heart"
-                            title="Wishlist"
-                          ></a>
-                          <a
-                            href="#"
-                            class="btn-product-icon btn-compare w-icon-compare"
-                            title="Compare"
-                          ></a>
-                          <a
-                            href="#"
-                            class="btn-product-icon btn-quickview w-icon-search"
-                            title="Quick View"
-                          ></a>
-                        </div>
-                      </figure>
-                      <div class="product-details">
-                        <div class="product-cat">
-                          <a href="shop-banner-sidebar.html">Electronics</a>
-                        </div>
-                        <h3 class="product-name">
-                          <a href="product-default.html">3D Television</a>
-                        </h3>
-                        <div class="ratings-container">
-                          <div class="ratings-full">
-                            <span class="ratings" style="width: 100%"></span>
-                            <span class="tooltiptext tooltip-top"></span>
+                  <div class="product-wrapper row cols-md-3 cols-sm-2 cols-2">
+                      @forelse($products as $product)
+                          <div class="product-wrap">
+                              <div class="product text-center">
+                                  <figure class="product-media">
+                                      <a href="{{ route('product-details', ['product_id' => $product['Id']]) }}">
+                                          <img src="https://prodhanltd.com/{{ $product['Image'] }}"
+                                               alt="{{ $product['Title'] }}"
+                                               width="300"
+                                               height="338" />
+                                      </a>
+                                      <div class="product-action-horizontal">
+                                          <a href="#" class="btn-product-icon btn-cart w-icon-cart" title="Add to cart"></a>
+                                          <a href="#" class="btn-product-icon btn-wishlist w-icon-heart" title="Wishlist"></a>
+                                          <a href="#" class="btn-product-icon btn-compare w-icon-compare" title="Compare"></a>
+                                          <a href="#" class="btn-product-icon btn-quickview w-icon-search" title="Quick View"></a>
+                                      </div>
+                                  </figure>
+                                  <div class="product-details">
+                                      <div class="product-cat">
+                                          <a href="#">{{ $selectedCategory }}</a>
+                                      </div>
+                                      <h3 class="product-name">
+                                          <a href="{{ route('product-details', ['product_id' => $product['Id']]) }}">
+                                              {{ Str::limit($product['Title'], 40) }}
+                                          </a>
+                                      </h3>
+                                      <div class="ratings-container">
+                                          <div class="ratings-full">
+                                              <span class="ratings" style="width: 100%"></span>
+                                          </div>
+                                      </div>
+                                      <div class="product-pa-wrapper">
+                                          <div class="product-price">
+                                              ৳{{ $product['Price'] }}
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
                           </div>
-                          <a href="product-default.html" class="rating-reviews"
-                            >(3 reviews)</a
-                          >
-                        </div>
-                        <div class="product-pa-wrapper">
-                          <div class="product-price">$220.00 - $230.00</div>
-                        </div>
-                      </div>
-                    </div>
+                      @empty
+                          <p class="text-danger">No products found for {{ $selectedCategory }}</p>
+                      @endforelse
                   </div>
-
-                </div>
 
                   @include('shop.paginate')
               </div>

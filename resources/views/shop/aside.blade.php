@@ -22,7 +22,14 @@
                 </h3>
                 <ul class="widget-body filter-items search-ul">
                     @foreach($categories as $cat)
-                        <li><a href="{{ route('shopFullwidthBanner', ['category' => ($cat['Category'])]) }}">{{ $cat['Category'] }}</a></li>
+                        <li>
+                            <a
+                                href="{{ route('shopFullwidthBanner', ['category' => ($cat['Category'])]) }}"
+                                class="{{ $selectedCategory == $cat['Category'] ? 'text-primary font-weight-bold' : '' }}">
+                            >
+                                {{ $cat['Category'] }}
+                            </a>
+                        </li>
                     @endforeach
                 </ul>
             </div>

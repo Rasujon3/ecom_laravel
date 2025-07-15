@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Session;
 
 class PageController extends Controller
 {
@@ -48,9 +49,25 @@ class PageController extends Controller
         return view('shop-fullwidth-banner', compact('products', 'category'));
     }
 
-    public function shopBannerSidebar()
+    public function shopBannerSidebar(Request $request)
     {
-        return view('shop-banner-sidebar');
+        $selectedCategory = $request->input('category', 'Umbrellas'); // default category
+
+        // Fetch category list from session (set earlier in middleware)
+        $categories = Session::get('home_categories', []);
+
+        // Fetch products from API
+        $productResponse = Http::asForm()->post('https://prodhanltd.com/api/category_wise_prodict.php', [
+            'category' => $selectedCategory,
+            'limit' => 100,
+            'type' => 0
+        ]);
+
+        $products = ($productResponse->successful() && $productResponse['error'] == 0)
+            ? $productResponse['report']
+            : [];
+
+        return view('shop-banner-sidebar', compact('categories', 'products', 'selectedCategory'));
     }
 
     public function productDetails(Request $request)

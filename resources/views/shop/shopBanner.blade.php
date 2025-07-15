@@ -15,7 +15,7 @@
             Smart Watches
         </h3>
         <a
-            href="shop-banner-sidebar.html"
+            href="{{ route('shopFullwidthBanner', ['category' => 'Mens Products']) }}"
             class="btn btn-dark btn-rounded btn-icon-right"
         >Discover Now<i class="w-icon-long-arrow-right"></i
             ></a>
