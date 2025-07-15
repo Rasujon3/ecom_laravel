@@ -16,14 +16,22 @@ class CartController extends Controller
             return response()->json(['status' => false, 'message' => 'Product ID is required.'], 400);
         }
 
+        // 🔄 Get existing cart
         $cart = Session::get('cart', []);
 
-        // Check if product already in cart
+        // 🔁 Check if product already in cart
         if (array_key_exists($productId, $cart)) {
             return response()->json(['status' => false, 'message' => 'Already in cart.'], 409);
         }
 
-        // Add to cart
+        // ✅ Remove from wishlist if exists
+        $wishlist = Session::get('wishlist', []);
+        if (isset($wishlist[$productId])) {
+            unset($wishlist[$productId]);
+            Session::put('wishlist', $wishlist);
+        }
+
+        // 🛒 Add to cart
         $cart[$productId] = [
             'id' => $productId,
             'title' => $productData['title'],
@@ -34,7 +42,10 @@ class CartController extends Controller
 
         Session::put('cart', $cart);
 
-        return response()->json(['status' => true, 'message' => 'Added to cart']);
+        return response()->json([
+            'status' => true,
+            'message' => 'Added to cart'
+        ]);
     }
 
     public function remove($id, Request $request)
