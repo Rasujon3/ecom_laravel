@@ -90,7 +90,7 @@ class PageController extends Controller
             abort(404, 'Product not found');
         }
 
-        return view('product-details', compact('product'));
+        return view('product-details', compact('product','productId'));
     }
 
     public function order()

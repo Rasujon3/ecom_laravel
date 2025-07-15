@@ -26,13 +26,23 @@
     <span class="divider d-xs-show"></span>
     <div class="product-link-wrapper d-flex">
         <a
-            href="#"
-            class="btn-product-icon btn-wishlist w-icon-heart"
+            href="javascript:void(0);"
+            class="btn-product-icon btn-wishlist w-icon-heart add-to-cart"
+            data-id="{{ $productId }}"
+            data-title="{{ $product['title'] }}"
+            data-image="https://prodhanltd.com/{{ $product['image'] }}"
+            data-price="{{ $product['price'] }}"
+            data-point="{{ $product['point'] ?? 0 }}"
         ><span></span
             ></a>
         <a
-            href="#"
-            class="btn-product-icon btn-compare btn-icon-left w-icon-compare"
+            href="javascript:void(0);"
+            class="btn-product-icon btn-compare btn-icon-left w-icon-wallet2 add-to-wishlist"
+            data-id="{{ $productId }}"
+            data-title="{{ $product['title'] }}"
+            data-image="https://prodhanltd.com/{{ $product['image'] }}"
+            data-price="{{ $product['price'] }}"
+            data-point="{{ $product['point'] ?? 0 }}"
         ><span></span
             ></a>
     </div>

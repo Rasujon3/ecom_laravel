@@ -162,7 +162,6 @@
                     point: product.point
                 },
                 success: function (res) {
-                    console.log('res',res)
                     if (res.status) {
                         updateCartDropdown();
                         alert('Added to cart!');

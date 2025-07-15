@@ -46,7 +46,7 @@
                   >
                 </li>
                 <li class="link-item">
-                  <a href="wishlist.html">Wishlist</a>
+                  <a href="{{ route('wishlist') }}">Wishlist</a>
                 </li>
                 <li class="link-item">
                   <a href="login.html">Logout</a>
@@ -128,7 +128,7 @@
                       </a>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-4 col-xs-6 mb-4">
-                      <a href="wishlist.html" class="link-to-tab">
+                      <a href="{{ route('wishlist') }}" class="link-to-tab">
                         <div class="icon-box text-center">
                           <span class="icon-box-icon icon-wishlist">
                             <i class="w-icon-heart"></i>

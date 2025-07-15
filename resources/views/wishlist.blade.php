@@ -71,10 +71,19 @@
                         </td>
                         <td class="wishlist-action">
                             <div class="d-lg-flex">
-                                <a href="#" class="btn btn-quickview btn-outline btn-default btn-rounded btn-sm mb-2 mb-lg-0">
+                                <a
+                                    href="{{ route('product-details', ['product_id' => $item['id']]) }}"
+                                   class="btn btn-outline btn-default btn-rounded btn-sm mb-2 mb-lg-0">
                                     Quick View
                                 </a>
-                                <a href="#" class="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart">
+                                <a href="javascript:void(0);"
+                                   class="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart add-to-cart"
+                                   data-id="{{ $item['id'] }}"
+                                   data-title="{{ $item['title'] }}"
+                                   data-image="{{ $item['image'] }}"
+                                   data-price="{{ $item['price'] }}"
+                                   data-point="{{ $item['point'] ?? 0 }}"
+                                >
                                     Add to cart
                                 </a>
                             </div>
@@ -147,5 +156,55 @@
             }
         });
     });
-</script>
 
+    function updateCartDropdown() {
+        $.ajax({
+            url: "{{ route('cart.html') }}",
+            type: "GET",
+            success: function (res) {
+                if (res.status) {
+                    $('#cart-dropdown-box').html($(res.html).find('#cart-dropdown-box').html());
+                    $('#cart-count').text($(res.html).find('#cart-count').text());
+                }
+            },
+            error: function () {
+                console.error("Failed to update cart.");
+            }
+        });
+    }
+
+    $('.add-to-cart').one('click', function (e) {
+        e.preventDefault();
+        let el = $(this);
+        let product_id = el.data('id');
+
+        try {
+            $.ajax({
+                url: '{{ route("cart.add") }}',
+                type: 'POST',
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    product_id: product_id,
+                    title: el.data('title'),
+                    image: el.data('image'),
+                    price: el.data('price'),
+                    point: el.data('point')
+                },
+                success: function (response) {
+                    if (response.status) {
+                        alert('✔️ ' + response.message);
+                        el.addClass('disabled').css('pointer-events', 'none');
+                        updateCartDropdown();
+                    } else {
+                        alert('⚠️ ' + response.message);
+                    }
+                },
+                error: function (xhr) {
+                    alert('❌ Failed to add to cart.');
+                }
+            });
+        } catch (error) {
+            alert('Something went wrong!!!');
+        }
+    });
+</script>
