@@ -23,19 +23,19 @@ Route::get('/shop-banner-sidebar', [PageController::class, 'shopBannerSidebar'])
 
 Route::get('/product-details', [PageController::class, 'productDetails'])->name('product-details');
 
-Route::get('/order', [PageController::class, 'order']);
+Route::get('/order', [PageController::class, 'order'])->name('order');
 
 Route::get('/my-account', [PageController::class, 'myAccount'])->name('my-account');
 
-Route::get('/login', [PageController::class, 'login']);
+Route::get('/login', [PageController::class, 'login'])->name('login');
 
 Route::get('/faq', [PageController::class, 'faq'])->name('faq');
 
 Route::get('/contact-us', [PageController::class, 'contactUs'])->name('contact-us');
 
-Route::get('/checkout', [PageController::class, 'checkout']);
+Route::get('/checkout', [PageController::class, 'checkout'])->name('checkout');
 
-Route::get('/cart', [PageController::class, 'cart']);
+Route::get('/cart', [PageController::class, 'cart'])->name('cart');
 
 Route::get('/about-us', [PageController::class, 'aboutUs'])->name('about-us');
 

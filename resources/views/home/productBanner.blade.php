@@ -6,7 +6,8 @@
         <div class="banner banner-fixed br-sm appear-animate">
             <figure>
                 <img
-                    src="assets/images/demos/demo3/banners/2.jpg"
+{{--                    src="assets/images/demos/demo3/banners/2.jpg"--}}
+                    src="{{ asset('assets/images/demos/demo3/banners/2.jpg') }}"
                     alt="banner"
                     width="925"
                     height="298"
@@ -61,7 +62,8 @@
                                     height="338"
                                 />
                                 <img
-                                    src="assets/images/demos/demo3/products/2-1-2.jpg"
+{{--                                    src="assets/images/demos/demo3/products/2-1-2.jpg"--}}
+                                    src="{{ asset('assets/images/demos/demo3/products/2-1-2.jpg') }}"
                                     alt="Product"
                                     width="330"
                                     height="338"

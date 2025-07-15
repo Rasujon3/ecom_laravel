@@ -2,7 +2,8 @@
     <div class="col-md-6 mb-4">
         <figure class="banner banner-fixed br-sm">
             <img
-                src="assets/images/demos/demo3/categories/10.jpg"
+{{--                src="assets/images/demos/demo3/categories/10.jpg"--}}
+                src="{{ asset('assets/images/demos/demo3/categories/10.jpg') }}"
                 alt="Category Banner"
                 width="610"
                 height="200"
@@ -31,7 +32,8 @@
     <div class="col-md-6 mb-4">
         <figure class="banner banner-fixed br-sm">
             <img
-                src="assets/images/demos/demo3/categories/11.jpg"
+{{--                src="assets/images/demos/demo3/categories/11.jpg"--}}
+                src="{{ asset('assets/images/demos/demo3/categories/11.jpg') }}"
                 alt="Category Banner"
                 width="610"
                 height="200"

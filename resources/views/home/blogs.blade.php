@@ -20,7 +20,8 @@
                 <figure class="post-media br-sm">
                     <a href="post-single.html">
                         <img
-                            src="assets/images/demos/demo3/blog/1.jpg"
+{{--                            src="assets/images/demos/demo3/blog/1.jpg"--}}
+                            src="{{ asset('assets/images/demos/demo3/blog/1.jpg') }}"
                             alt="Post"
                             width="400"
                             height="240"
@@ -55,7 +56,8 @@
                 <figure class="post-media br-sm">
                     <a href="post-single.html">
                         <img
-                            src="assets/images/demos/demo3/blog/2.jpg"
+{{--                            src="assets/images/demos/demo3/blog/2.jpg"--}}
+                            src="{{ asset('assets/images/demos/demo3/blog/2.jpg') }}"
                             alt="Post"
                             width="400"
                             height="240"
@@ -90,7 +92,8 @@
                 <figure class="post-media br-sm">
                     <a href="post-single.html">
                         <img
-                            src="assets/images/demos/demo3/blog/3.jpg"
+{{--                            src="assets/images/demos/demo3/blog/3.jpg"--}}
+                            src="{{ asset('assets/images/demos/demo3/blog/3.jpg') }}"
                             alt="Post"
                             width="400"
                             height="240"

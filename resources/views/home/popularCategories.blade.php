@@ -43,13 +43,15 @@
                         <figure class="product-media">
                             <a href="product-details.php">
                                 <img
-                                    src="assets/images/demos/demo3/products/5-1-1.jpg"
+{{--                                    src="assets/images/demos/demo3/products/5-1-1.jpg"--}}
+                                    src="{{ asset('assets/images/demos/demo3/products/5-1-1.jpg') }}"
                                     alt="Product"
                                     width="330"
                                     height="338"
                                 />
                                 <img
-                                    src="assets/images/demos/demo3/products/5-1-2.jpg"
+{{--                                    src="assets/images/demos/demo3/products/5-1-2.jpg"--}}
+                                    src="{{ asset('assets/images/demos/demo3/products/5-1-2.jpg') }}"
                                     alt="Product"
                                     width="330"
                                     height="338"
@@ -110,7 +112,8 @@
                         <figure class="product-media">
                             <a href="product-details.php">
                                 <img
-                                    src="assets/images/demos/demo3/products/5-2.jpg"
+{{--                                    src="assets/images/demos/demo3/products/5-2.jpg"--}}
+                                    src="{{ asset('assets/images/demos/demo3/products/5-2.jpg') }}"
                                     alt="Product"
                                     width="330"
                                     height="338"

@@ -36,7 +36,8 @@
               </p>
               <figure class="br-lg">
                 <img
-                  src="assets/images/pages/about_us/1.jpg"
+{{--                  src="assets/images/pages/about_us/1.jpg"--}}
+                  src="{{ asset('assets/images/pages/about_us/1.jpg') }}"
                   alt="Banner"
                   width="1240"
                   height="540"
@@ -102,7 +103,8 @@
                 <div class="col-md-6 mb-8">
                   <figure class="br-lg">
                     <img
-                      src="assets/images/pages/about_us/2.jpg"
+{{--                      src="assets/images/pages/about_us/2.jpg"--}}
+                      src="{{ asset('assets/images/pages/about_us/2.jpg') }}"
                       alt="Banner"
                       width="610"
                       height="500"
@@ -175,7 +177,8 @@
                 <div class="col-md-6 mb-8">
                   <figure class="br-lg">
                     <img
-                      src="assets/images/pages/about_us/3.jpg"
+{{--                      src="assets/images/pages/about_us/3.jpg"--}}
+                      src="{{ asset('assets/images/pages/about_us/3.jpg') }}"
                       alt="Banner"
                       width="610"
                       height="450"

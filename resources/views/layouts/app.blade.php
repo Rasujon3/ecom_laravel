@@ -8,7 +8,7 @@
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
     />
 
-    <title>RIT e-commerce</title>
+    <title>{{ session('about_us.institute_name') ?? 'RIT e-commerce' }}</title>
 
     <meta
       name="keywords"

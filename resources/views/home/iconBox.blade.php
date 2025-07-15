@@ -18,7 +18,8 @@
         <div class="swiper-slide">
             <figure class="banner banner-fixed br-sm">
                 <img
-                    src="assets/images/demos/demo3/categories/1.jpg"
+{{--                    src="assets/images/demos/demo3/categories/1.jpg"--}}
+                    src="{{ asset('assets/images/demos/demo3/categories/1.jpg') }}"
                     alt="Category Banner"
                     width="400"
                     height="200"
@@ -46,7 +47,8 @@
         <div class="swiper-slide">
             <figure class="banner banner-fixed br-sm">
                 <img
-                    src="assets/images/demos/demo3/categories/2.jpg"
+{{--                    src="assets/images/demos/demo3/categories/2.jpg"--}}
+                    src="{{ asset('assets/images/demos/demo3/categories/2.jpg') }}"
                     alt="Category Banner"
                     width="400"
                     height="200"
@@ -74,7 +76,8 @@
         <div class="swiper-slide">
             <figure class="banner banner-fixed br-sm">
                 <img
-                    src="assets/images/demos/demo3/categories/3.jpg"
+{{--                    src="assets/images/demos/demo3/categories/3.jpg"--}}
+                    src="{{ asset('assets/images/demos/demo3/categories/3.jpg') }}"
                     alt="Category Banner"
                     width="400"
                     height="200"

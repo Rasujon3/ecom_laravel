@@ -4,7 +4,8 @@
         <div class="banner banner-fixed br-sm appear-animate">
             <figure>
                 <img
-                    src="assets/images/demos/demo3/banners/3.jpg"
+{{--                    src="assets/images/demos/demo3/banners/3.jpg"--}}
+                    src="{{ asset('assets/images/demos/demo3/banners/3.jpg') }}"
                     alt="banner"
                     width="925"
                     height="298"
