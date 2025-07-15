@@ -33,7 +33,7 @@
         <div class="tab-content">
             <div class="tab-pane active" id="main-menu">
                 <ul class="mobile-menu">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="{{ route('home') }}">Home</a></li>
                     <li>
                         <a href="shop-banner-sidebar.html">Shop</a>
                         <ul>

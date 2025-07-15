@@ -5,7 +5,7 @@
         <!-- Start of Breadcrumb -->
         <nav class="breadcrumb-nav container">
           <ul class="breadcrumb bb-no">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="{{ route('home') }}">Home</a></li>
             <li>Products</li>
           </ul>
           <ul class="product-nav list-style-none">
