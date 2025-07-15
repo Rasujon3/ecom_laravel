@@ -93,7 +93,14 @@
                                                 </a>
                                                 <div class="product-action-horizontal">
                                                     <a href="#" class="btn-product-icon btn-cart w-icon-cart" title="Add to cart"></a>
-                                                    <a href="#" class="btn-product-icon btn-wishlist w-icon-heart" title="Wishlist"></a>
+                                                    <a href="javascript:void(0);"
+                                                       class="btn-product-icon btn-wishlist w-icon-heart add-to-wishlist"
+                                                       data-id="{{ $product['Id'] }}"
+                                                       data-title="{{ $product['Title'] }}"
+                                                       data-image="https://prodhanltd.com/{{ $product['Image'] }}"
+                                                       data-price="{{ $product['Price'] }}"
+                                                       data-point="{{ $product['point'] ?? 0 }}"
+                                                       title="Wishlist"></a>
                                                     <a href="#" class="btn-product-icon btn-compare w-icon-compare" title="Compare"></a>
                                                     <a href="#" class="btn-product-icon btn-quickview w-icon-search" title="Quick View"></a>
                                                 </div>
@@ -272,3 +279,39 @@
         <!-- End of Page Content -->
     </main>
 @endsection
+
+<script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.add-to-wishlist').on('click', function () {
+            let el = $(this);
+            let product_id = el.data('id');
+
+            $.ajax({
+                url: '{{ route("wishlist.add") }}',
+                type: 'POST',
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    product_id: product_id,
+                    title: el.data('title'),
+                    image: el.data('image'),
+                    price: el.data('price'),
+                    point: el.data('point')
+                },
+                success: function (response) {
+                    if (response.status) {
+                        alert('✔️ ' + response.message);
+                        el.addClass('disabled').css('pointer-events', 'none');
+                    } else {
+                        alert('⚠️ ' + response.message);
+                    }
+                },
+                error: function (xhr) {
+                    alert('❌ Failed to add to wishlist.');
+                }
+            });
+        });
+    });
+</script>
+

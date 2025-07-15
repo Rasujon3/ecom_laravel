@@ -27,7 +27,8 @@ class PageController extends Controller
 
     public function wishlist()
     {
-        return view('wishlist');
+        $wishlist = session()->get('wishlist', []);
+        return view('wishlist', compact('wishlist'));
     }
     public function shopFullwidthBanner(Request $request)
     {

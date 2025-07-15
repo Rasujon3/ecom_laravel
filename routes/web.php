@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\WishlistController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,3 +43,9 @@ Route::get('/about-us', [PageController::class, 'aboutUs'])->name('about-us');
 Route::get('/search-products', [PageController::class, 'searchProducts'])->name('search.products');
 
 Route::get('/', [PageController::class, 'index'])->name('home');
+
+Route::post('/wishlist/add', [WishlistController::class, 'add'])->name('wishlist.add');
+
+Route::post('/wishlist/remove/{id}', [WishlistController::class, 'remove'])->name('wishlist.remove');
+
+

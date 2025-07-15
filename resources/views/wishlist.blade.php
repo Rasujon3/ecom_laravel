@@ -31,140 +31,60 @@
                   <th class="product-name"><span>Product</span></th>
                   <th></th>
                   <th class="product-price"><span>Price</span></th>
-                  <th class="product-stock-status">
-                    <span>Stock Status</span>
-                  </th>
+{{--                  <th class="product-stock-status">--}}
+{{--                    <span>Stock Status</span>--}}
+{{--                  </th>--}}
                   <th class="wishlist-action">Actions</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td class="product-thumbnail">
-                    <div class="p-relative">
-                      <a href="product-default.html">
-                        <figure>
-                          <img
-                            src="{{ asset('assets/images/shop/7-1.jpg') }}"
-                            alt="product"
-                            width="300"
-                            height="338"
-                          />
-                        </figure>
-                      </a>
-                      <button type="submit" class="btn btn-close">
-                        <i class="fas fa-times"></i>
-                      </button>
-                    </div>
-                  </td>
-                  <td class="product-name">
-                    <a href="product-default.html"> Blue Sky Trunk </a>
-                  </td>
-                  <td class="product-price">
-                    <ins class="new-price">$85.00</ins>
-                  </td>
-                  <td class="product-stock-status">
-                    <span class="wishlist-in-stock">In Stock</span>
-                  </td>
-                  <td class="wishlist-action">
-                    <div class="d-lg-flex">
-                      <a
-                        href="#"
-                        class="btn btn-quickview btn-outline btn-default btn-rounded btn-sm mb-2 mb-lg-0"
-                        >Quick View</a
-                      >
-                      <a
-                        href="#"
-                        class="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart"
-                        >Add to cart</a
-                      >
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="product-thumbnail">
-                    <div class="p-relative">
-                      <a href="product-default.html">
-                        <figure>
-                          <img
-                            src="{{ asset('assets/images/shop/19-1.jpg') }}"
-                            alt="product"
-                            width="300"
-                            height="338"
-                          />
-                        </figure>
-                      </a>
-                      <button type="submit" class="btn btn-close">
-                        <i class="fas fa-times"></i>
-                      </button>
-                    </div>
-                  </td>
-                  <td class="product-name">
-                    <a href="product-default.html"> Handmade Ring </a>
-                  </td>
-                  <td class="product-price">
-                    <ins class="new-price">$5.00</ins>
-                  </td>
-                  <td class="product-stock-status">
-                    <span class="wishlist-in-stock">In Stock</span>
-                  </td>
-                  <td class="wishlist-action">
-                    <div class="d-lg-flex">
-                      <a
-                        href="#"
-                        class="btn btn-quickview btn-outline btn-default btn-rounded btn-sm mb-2 mb-lg-0"
-                        >Quick View</a
-                      >
-                      <a
-                        href="#"
-                        class="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart"
-                        >Add to cart</a
-                      >
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="product-thumbnail">
-                    <div class="p-relative">
-                      <a href="product-default.html">
-                        <figure>
-                          <img
-                            src="{{ asset('assets/images/shop/20.jpg') }}"
-                            alt="product"
-                            width="300"
-                            height="338"
-                          />
-                        </figure>
-                      </a>
-                      <button type="submit" class="btn btn-close">
-                        <i class="fas fa-times"></i>
-                      </button>
-                    </div>
-                  </td>
-                  <td class="product-name">
-                    <a href="product-default.html"> Pencil Case </a>
-                  </td>
-                  <td class="product-price">
-                    <ins class="new-price">$54.00</ins>
-                  </td>
-                  <td class="product-stock-status">
-                    <span class="wishlist-in-stock">In Stock</span>
-                  </td>
-                  <td class="wishlist-action">
-                    <div class="d-lg-flex">
-                      <a
-                        href="#"
-                        class="btn btn-quickview btn-outline btn-default btn-rounded btn-sm mb-2 mb-lg-0"
-                        >Quick View</a
-                      >
-                      <a
-                        href="#"
-                        class="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart"
-                        >Add to cart</a
-                      >
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
+                @forelse($wishlist as $item)
+                    <tr>
+                        <td class="product-thumbnail">
+                            <div class="p-relative">
+                                <a href="{{ route('product-details', ['product_id' => $item['id']]) }}">
+                                    <figure>
+                                        <img
+                                            src="{{ $item['image'] }}"
+                                            alt="{{ $item['title'] }}"
+                                            width="300"
+                                            height="338"
+                                        />
+                                    </figure>
+                                </a>
+                                <button class="btn btn-close remove-wishlist" data-id="{{ $item['id'] }}">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </td>
+                        <td class="product-name">
+                            <a href="{{ route('product-details', ['product_id' => $item['id']]) }}">
+                                {{ $item['title'] }}
+                            </a>
+                        </td>
+                        <td class="product-price">
+                            <ins class="new-price">৳ {{ $item['price'] }}</ins>
+                        </td>
+                        <td class="product-stock-status">
+{{--                    <span class="wishlist-in-stock">--}}
+{{--                        {{ (isset($item['stock']) && $item['stock'] == 1) ? 'In Stock' : 'Out of Stock' }}--}}
+{{--                    </span>--}}
+                        </td>
+                        <td class="wishlist-action">
+                            <div class="d-lg-flex">
+                                <a href="#" class="btn btn-quickview btn-outline btn-default btn-rounded btn-sm mb-2 mb-lg-0">
+                                    Quick View
+                                </a>
+                                <a href="#" class="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart">
+                                    Add to cart
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                @empty
+                    <tr>
+                        <td colspan="5" class="text-center">Your wishlist is empty.</td>
+                    </tr>
+                @endforelse
             </table>
             <div class="social-links">
               <label>Share On:</label>
@@ -196,3 +116,44 @@
         <!-- End of PageContent -->
       </main>
 @endsection
+
+<script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
+
+<script>
+    $(document).on('click', '.remove-wishlist', function (e) {
+        e.preventDefault();
+
+        const productId = $(this).data('id');
+        const row = $('#wishlist-row-' + productId);
+
+        if (!productId) return alert('Invalid product.');
+
+        $.ajax({
+            url: '/wishlist/remove/' + productId,
+            method: 'POST',
+            data: {
+                _token: '{{ csrf_token() }}'
+            },
+            success: function (response) {
+                if (response.status === 'success') {
+                    alert('Item removed from wishlist.');
+                    window.location.reload();
+                    row.fadeOut(300, function () {
+                        $(this).remove();
+
+                        // Optional: Show a message if table becomes empty
+                        if ($('.wishlist-table tbody tr').length === 0) {
+                            $('.wishlist-table tbody').html('<tr><td colspan="5" class="text-center">Your wishlist is empty.</td></tr>');
+                        }
+                    });
+                } else {
+                    alert(response.message);
+                }
+            },
+            error: function () {
+                alert('Failed to remove product from wishlist. Please try again.');
+            }
+        });
+    });
+</script>
+
