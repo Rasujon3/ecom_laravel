@@ -138,14 +138,6 @@
                 if (response.status === 'success') {
                     alert('Item removed from wishlist.');
                     window.location.reload();
-                    row.fadeOut(300, function () {
-                        $(this).remove();
-
-                        // Optional: Show a message if table becomes empty
-                        if ($('.wishlist-table tbody tr').length === 0) {
-                            $('.wishlist-table tbody').html('<tr><td colspan="5" class="text-center">Your wishlist is empty.</td></tr>');
-                        }
-                    });
                 } else {
                     alert(response.message);
                 }
