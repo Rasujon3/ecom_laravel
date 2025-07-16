@@ -54,7 +54,7 @@
                 </a>
                 <a href="{{ route('home') }}" class="logo ml-lg-0">
                     <img
-                        src="{{ session('about_us.institute_phone') ? 'https://prodhanltd.com/'.session('about_us.head_image') : asset('assets/images/demos/demo3/header-logo.png') }}"
+                        src="{{ session('about_us.institute_phone') ?  config('api.url') .session('about_us.head_image') : asset('assets/images/demos/demo3/header-logo.png') }}"
                         alt="logo"
                         width="144"
                         height="45"

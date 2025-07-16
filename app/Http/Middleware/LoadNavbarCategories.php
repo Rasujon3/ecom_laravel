@@ -11,7 +11,7 @@ class LoadNavbarCategories
     public function handle($request, Closure $next)
     {
         if (!Session::has('home_categories')) {
-            $response = Http::asForm()->post('https://prodhanltd.com/api/home_page_category.php');
+            $response = Http::asForm()->post(config('api.url') . 'api/home_page_category.php');
 
             if ($response->successful() && $response['error'] == 0) {
                 Session::put('home_categories', $response['report']);
@@ -21,7 +21,7 @@ class LoadNavbarCategories
         }
 
         if (!Session::has('about_us')) {
-            $response = Http::asForm()->post('https://prodhanltd.com/api/institute.php');
+            $response = Http::asForm()->post(config('api.url') . 'api/institute.php');
 
             if ($response->successful()) {
                 Session::put('about_us', $response->json());

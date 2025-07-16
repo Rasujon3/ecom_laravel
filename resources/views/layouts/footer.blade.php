@@ -6,7 +6,7 @@
                     <div class="widget widget-about">
                         <a href="#" class="logo-footer">
                             <img
-                                src="{{ session('about_us.institute_logo') ? 'https://prodhanltd.com/'.session('about_us.institute_logo') : asset('assets/images/demos/demo3/footer-logo.png') }}"
+                                src="{{ session('about_us.institute_logo') ?  config('api.url') .session('about_us.institute_logo') : asset('assets/images/demos/demo3/footer-logo.png') }}"
                                 alt="logo-footer"
                                 width="145"
                                 height="45"

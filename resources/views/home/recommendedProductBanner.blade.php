@@ -32,7 +32,7 @@
                                             <figure class="product-media">
                                                 <a href="{{ route('product-details', ['product_id' => $product['Id']]) }}">
                                                     <img
-                                                        src="https://prodhanltd.com/{{ $product['Image'] }}"
+                                                        src="{{ config('api.url') . $product['Image'] }}"
                                                         alt="{{ $product['Title'] }}"
                                                         width="105"
                                                         height="118"

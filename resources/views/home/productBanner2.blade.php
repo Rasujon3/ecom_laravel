@@ -54,7 +54,7 @@
                             <figure class="product-media">
                                 <a href="{{ route('product-details', ['product_id' => $featuredProduct['Id']]) }}">
                                     <img
-                                        src="https://prodhanltd.com/{{ $featuredProduct['Image'] }}"
+                                        src="{{ config('api.url') . $featuredProduct['Image'] }}"
                                         alt="{{ $featuredProduct['Title'] }}"
                                         width="330"
                                         height="338"

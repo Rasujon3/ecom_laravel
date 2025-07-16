@@ -91,7 +91,7 @@
                       <div class="product-bm-wrapper">
                         <figure class="brand">
                           <img
-                            src="{{ 'https://prodhanltd.com/'.$product['image'] }}"
+                            src="{{ config('api.url') .$product['image'] }}"
                             alt="Brand"
                             width="102"
                             height="48"

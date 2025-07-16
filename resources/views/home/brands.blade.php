@@ -31,7 +31,7 @@
                 <figure class="category-media">
                     <a href="{{ route('shopFullwidthBanner', ['category' => ($cat['Category'])]) }}">
                         <img
-                            src="https://prodhanltd.com/{{ $cat['Image'] }}" alt="{{ $cat['Category'] }}"
+                            src="{{  config('api.url') . $cat['Image'] }}" alt="{{ $cat['Category'] }}"
                             width="190"
                             height="190"
                             style="background-color: #5c92c0"

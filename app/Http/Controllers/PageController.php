@@ -11,15 +11,15 @@ class PageController extends Controller
     public function index()
     {
         // Slider data
-        $sliderResponse = Http::get('https://prodhanltd.com/api/slide.php');
+        $sliderResponse = Http::get(config('api.url') . 'api/slide.php');
         $slides = ($sliderResponse->successful() && $sliderResponse['error'] == 0) ? $sliderResponse['report'] : [];
 
         // Arrival Products data
-        $arrivalProductResponse = Http::asForm()->post('https://prodhanltd.com/api/home_page.php');
+        $arrivalProductResponse = Http::asForm()->post(config('api.url') . 'api/home_page.php');
         $arrivalProducts = ($arrivalProductResponse->successful() && $arrivalProductResponse['error'] == 0) ? $arrivalProductResponse['report'] : [];
 
         // Featured Products data
-        $featuredProductResponse = Http::asForm()->post('https://prodhanltd.com/api/home_page_special.php');
+        $featuredProductResponse = Http::asForm()->post(config('api.url') . 'api/home_page_special.php');
         $featuredProducts = ($featuredProductResponse->successful() && $featuredProductResponse['error'] == 0) ? $featuredProductResponse['report'] : [];
 
         return view('index', compact('slides', 'arrivalProducts', 'featuredProducts'));
@@ -36,7 +36,7 @@ class PageController extends Controller
 
         $products = [];
         if ($category) {
-            $response = Http::asForm()->post('https://prodhanltd.com/api/category_wise_prodict.php', [
+            $response = Http::asForm()->post(config('api.url') . 'api/category_wise_prodict.php', [
                 'category' => $category,
                 'limit' => 100,
                 'type' => 0,
@@ -58,7 +58,7 @@ class PageController extends Controller
         $categories = Session::get('home_categories', []);
 
         // Fetch products from API
-        $productResponse = Http::asForm()->post('https://prodhanltd.com/api/category_wise_prodict.php', [
+        $productResponse = Http::asForm()->post(config('api.url') . 'api/category_wise_prodict.php', [
             'category' => $selectedCategory,
             'limit' => 100,
             'type' => 0
@@ -77,7 +77,7 @@ class PageController extends Controller
 
         $product = null;
         if ($productId) {
-            $response = Http::get('https://prodhanltd.com/api/product_details2.php', [
+            $response = Http::get(config('api.url') . 'api/product_details2.php', [
                 'product_id' => $productId
             ]);
 
@@ -150,7 +150,7 @@ class PageController extends Controller
             return redirect()->back()->with('error', 'Please enter a search term.');
         }
 
-        $response = Http::asForm()->post('https://prodhanltd.com/api/product_search.php', [
+        $response = Http::asForm()->post(config('api.url') . 'api/product_search.php', [
             'search' => $searchTerm,
         ]);
 
@@ -171,7 +171,7 @@ class PageController extends Controller
         }
 
         foreach ($cart as $item) {
-            $response = Http::asForm()->post('https://self-recharge-ad.org/api/cart_insert.php', [
+            $response = Http::asForm()->post(config('api.url') . 'api/cart_insert.php', [
                 'unique_id' => $request->unique_id ?? '',
                 'product_id' => $item['id'] ?? '',
                 'quantity' => 1,

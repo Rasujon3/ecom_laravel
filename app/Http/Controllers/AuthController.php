@@ -26,7 +26,7 @@ class AuthController extends Controller
             'mobile' => 'required',
         ]);
 
-        $response = Http::asForm()->post('https://prodhanltd.com/api/join.php', [
+        $response = Http::asForm()->post(config('api.url') . 'api/join.php', [
             'user_name' => $request->mobile,
             'password' => '0',
             'name' => $request->name,
@@ -76,7 +76,7 @@ class AuthController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, [
-            CURLOPT_URL => 'https://prodhanltd.com/api/login.php',
+            CURLOPT_URL => config('api.url') . 'api/login.php',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,

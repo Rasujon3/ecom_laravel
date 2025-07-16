@@ -15,7 +15,7 @@
                 @foreach ($slides as $index => $slide)
                     <div
                         class="swiper-slide banner banner-fixed intro-slide intro-slide{{ $index + 1 }} br-sm"
-                        style="background-image: url('https://prodhanltd.com/{{ $slide['Image'] ?? 'default-image.jpg' }}'); background-color: #f5f5f5;"
+                        style="background-image: url('{{ config('api.url') . $slide['Image'] ?? 'default-image.jpg' }}'); background-color: #f5f5f5;"
                     >
                         <div class="banner-content y-50 x-50 w-100 text-center">
                             <h5
