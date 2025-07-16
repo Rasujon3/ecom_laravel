@@ -12,7 +12,7 @@
                 <!-- End of Dropdown Menu -->
 
                 <a href="{{ route('contact-us') }}" class="d-lg-show">Contact Us</a>
-                <a href="{{ route('my-account') }}" class="d-lg-show">My Account</a>
+{{--                <a href="{{ route('my-account') }}" class="d-lg-show">My Account</a>--}}
                 @if(Session::has('user_id'))
                     <a
                         href="#"

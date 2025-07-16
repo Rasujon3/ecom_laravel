@@ -16,8 +16,8 @@
             <a href="{{ route('faq') }}">FAQ's</a>
         </li>
 
-        <li @class(['active' => request()->routeIs('my-account')])>
-            <a href="{{ route('my-account') }}">My Account</a>
-        </li>
+{{--        <li @class(['active' => request()->routeIs('my-account')])>--}}
+{{--            <a href="{{ route('my-account') }}">My Account</a>--}}
+{{--        </li>--}}
     </ul>
 </nav>

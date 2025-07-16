@@ -27,8 +27,7 @@
             <section class="content-title-section mb-10">
               <h3 class="title title-center mb-3">Contact Information</h3>
               <p class="text-center">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut
+                {{ session('about_us.about_us') !== ""  ? session('about_us.about_us') : '' }}
               </p>
             </section>
             <!-- End of Contact Title Section -->
@@ -64,12 +63,7 @@
                     <div class="icon-box-content">
                       <h4 class="icon-box-title">E-mail Address</h4>
                       <p>
-                        <a
-                          href="https://portotheme.com/cdn-cgi/l/email-protection"
-                          class="__cf_email__"
-                          data-cfemail="d5b8b4bcb995b0adb4b8a5b9b0fbb6bab8"
-                          >[email&#160;protected]</a
-                        >
+                        {{ session('about_us.institute_email')  }}
                       </p>
                     </div>
                   </div>
@@ -81,7 +75,7 @@
                     </span>
                     <div class="icon-box-content">
                       <h4 class="icon-box-title">Phone Number</h4>
-                      <p>(123) 456-7890 / (123) 456-9870</p>
+                      <p>{{ session('about_us.institute_phone')  }}</p>
                     </div>
                   </div>
                   <div
@@ -92,7 +86,7 @@
                     </span>
                     <div class="icon-box-content">
                       <h4 class="icon-box-title">Address</h4>
-                      <p>Lawrence, NY 11345, USA</p>
+                      <p>{{ session('about_us.institute_address')  }}</p>
                     </div>
                   </div>
                   <div
@@ -102,8 +96,8 @@
                       <i class="w-icon-fax"></i>
                     </span>
                     <div class="icon-box-content">
-                      <h4 class="icon-box-title">Fax</h4>
-                      <p>1-800-570-7777</p>
+                      <h4 class="icon-box-established">Established</h4>
+                      <p>{{ session('about_us.established')  }}</p>
                     </div>
                   </div>
                 </div>
