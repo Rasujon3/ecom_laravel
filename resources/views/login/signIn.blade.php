@@ -1,20 +1,20 @@
 <div class="login-form">
     <h3 class="form-title">Sign In</h3>
 
-    <form method="POST" action="#">
+    <form method="POST" action="{{ route('login.submit') }}">
         @csrf
 
         <div class="form-group">
-            <label>Username or email address *</label>
+            <label>Username or mobile number *</label>
             <input
                 type="text"
                 class="form-control"
-                name="username"
-                id="username"
-                value="{{ old('username') }}"
+                name="user_name"
+                id="user_name"
+                value="{{ old('user_name') }}"
                 required
             />
-            @error('username')
+            @error('user_name')
             <div class="error-message">{{ $message }}</div>
             @enderror
         </div>
@@ -35,12 +35,7 @@
 
         <div class="form-checkbox d-flex align-items-center justify-content-between">
             <div>
-                <input
-                    type="checkbox"
-                    class="custom-checkbox"
-                    id="remember"
-                    name="remember"
-                />
+                <input type="checkbox" class="custom-checkbox" id="remember" name="remember">
                 <label for="remember">Remember me</label>
             </div>
             <a href="#">Lost your password?</a>
@@ -48,4 +43,13 @@
 
         <button type="submit" class="btn btn-primary">Sign In</button>
     </form>
+
+    <div class="form-footer text-center mt-4">
+        <p>
+            Don't have an account?
+            <a href="{{ route('register') }}" class="text-primary font-weight-bold">
+                Register
+            </a>
+        </p>
+    </div>
 </div>

@@ -69,6 +69,15 @@
     </div>
 </form>
 
+<div class="form-footer text-center mt-4">
+    <p>
+        Already have an account?
+        <a href="{{ route('login') }}" class="text-primary font-weight-bold">
+            Login
+        </a>
+    </p>
+</div>
+
 <script>
     // Mobile number auto-fill for user_name and user field
     document.querySelector('input[name="mobile"]').addEventListener('input', function () {

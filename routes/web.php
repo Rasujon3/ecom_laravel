@@ -56,7 +56,7 @@ Route::get('/cart/html', [CartController::class, 'getCartHtml'])->name('cart.htm
 
 // Auth
 Route::get('/login', [AuthController::class, 'login'])->name('login');
-Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
+Route::post('/login', [AuthController::class, 'userLogin'])->name('login.submit');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'userRegister'])->name('register.submit');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
