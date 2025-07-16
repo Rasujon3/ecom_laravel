@@ -37,7 +37,7 @@
             ></a>
         <a
             href="javascript:void(0);"
-            class="btn-product-icon btn-compare btn-icon-left w-icon-wallet2 add-to-wishlist"
+            class="btn-product-icon btn-compare btn-icon-left w-icon-cart add-to-wishlist"
             data-id="{{ $productId }}"
             data-title="{{ $product['title'] }}"
             data-image="https://prodhanltd.com/{{ $product['image'] }}"

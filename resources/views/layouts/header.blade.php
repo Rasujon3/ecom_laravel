@@ -13,13 +13,19 @@
 
                 <a href="{{ route('contact-us') }}" class="d-lg-show">Contact Us</a>
                 <a href="{{ route('my-account') }}" class="d-lg-show">My Account</a>
-                <a href="assets/ajax/login.html" class="d-lg-show login sign-in"
+                <a
+{{--                    href="assets/ajax/login.html" --}}
+{{--                    href="{{ asset('assets/ajax/login.html') }}"--}}
+                    href="{{ route('login') }}"
+                    class="d-lg-show"
                 ><i class="w-icon-account"></i>Sign In</a
                 >
                 <span class="delimiter d-lg-show">/</span>
                 <a
-                    href="assets/ajax/login.html"
-                    class="ml-0 d-lg-show login register"
+{{--                    href="assets/ajax/login.html"--}}
+{{--                    href="{{ asset('assets/ajax/login.html') }}"--}}
+                    href="{{ route('register') }}"
+                    class="ml-0 d-lg-show"
                 >Register</a
                 >
             </div>

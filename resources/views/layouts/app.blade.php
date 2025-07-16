@@ -87,6 +87,40 @@
 
     <!-- Default CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/demo3.min.css') }}" />
+      <style>
+          .alert {
+              padding: 15px 20px;
+              margin: 10px 20px;
+              border-radius: 5px;
+              position: relative;
+              font-size: 16px;
+              line-height: 1.4;
+              color: #fff;
+          }
+
+          .alert-success {
+              background-color: #28a745;
+          }
+
+          .alert-error {
+              background-color: #dc3545;
+          }
+
+          .close-btn {
+              position: absolute;
+              right: 15px;
+              top: 50%;
+              transform: translateY(-50%);
+              cursor: pointer;
+              font-size: 22px;
+              font-weight: bold;
+              color: #fff;
+          }
+
+          .close-btn:hover {
+              color: #000;
+          }
+      </style>
   </head>
 
   <body class="home">
@@ -97,6 +131,7 @@
       <!-- End of Header -->
 
       <main class="main">
+        @include('layouts.sessionFlushMessage')
         @yield('content')
       </main>
 
