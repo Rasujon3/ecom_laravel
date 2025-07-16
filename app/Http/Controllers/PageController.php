@@ -120,13 +120,19 @@ class PageController extends Controller
 
     public function checkout()
     {
-        return view('checkout');
+        $cart = session()->get('cart', []);
+        $cartCount = count($cart);
+        $cartSubtotal = array_sum(array_column($cart, 'price'));
+        return view('checkout', compact('cart', 'cartCount', 'cartSubtotal'));
     }
 
     public function cart()
     {
         $cart = session()->get('cart', []);
         $cartCount = count($cart);
+        if ($cartCount === 0) {
+            return redirect()->route('cart')->with('error', 'Your cart is empty.');
+        }
         $cartSubtotal = array_sum(array_column($cart, 'price'));
         return view('cart', compact('cart', 'cartCount', 'cartSubtotal'));
     }
@@ -155,5 +161,45 @@ class PageController extends Controller
             $totalFound = $response['search_found'];
         }
         return view('search-product', compact('searchResults', 'searchTerm', 'totalFound'));
+    }
+
+    public function submit(Request $request)
+    {
+        $cart = session()->get('cart', []);
+        if (empty($cart)) {
+            return redirect()->back()->with('error', 'Cart is empty.');
+        }
+
+        foreach ($cart as $item) {
+            $response = Http::asForm()->post('https://self-recharge-ad.org/api/cart_insert.php', [
+                'unique_id' => $request->unique_id ?? '',
+                'product_id' => $item['id'] ?? '',
+                'quantity' => 1,
+                'point' => $item['point'] ?? 0,
+                'size' => '',
+                'color' => '',
+                'special_price' => 0,
+                'money' => $item['price'] ?? '',
+                'device_id' => $request->device_id ?? '',
+                'user_id' => $request->user_id ?? '',
+                'ship_cost' => $request->ship_cost ?? 0,
+                'payment_method' => $request->payment_method ?? '',
+                'trans_id' => $request->trans_id ?? '',
+                'name' => $request->name ?? '',
+                'mobile' => $request->mobile ?? '',
+                'address' => $request->address ?? '',
+                'type' => $request->type ?? '',
+            ]);
+
+            $res = $response->json();
+            if (!$response->ok() || ($res['error'] ?? 1) != 0) {
+                return redirect()->back()->with('error', 'Order failed for product ID: ' . $item['id']);
+            }
+        }
+
+        // Order placed, clear cart
+        session()->forget('cart');
+
+        return redirect()->route('home')->with('success', 'Order placed successfully.');
     }
 }

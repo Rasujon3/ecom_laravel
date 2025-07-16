@@ -34,7 +34,10 @@ Route::get('/faq', [PageController::class, 'faq'])->name('faq');
 
 Route::get('/contact-us', [PageController::class, 'contactUs'])->name('contact-us');
 
-Route::get('/checkout', [PageController::class, 'checkout'])->name('checkout');
+Route::get('/checkout', [PageController::class, 'checkout'])->middleware('checkAuth')->name('checkout');
+
+Route::post('/checkout', [PageController::class, 'submit'])->name('checkout.submit');
+
 
 Route::get('/cart', [PageController::class, 'cart'])->name('cart');
 
